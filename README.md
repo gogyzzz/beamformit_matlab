@@ -8,7 +8,7 @@
 | beamformit_step_by_step.mlx | MATLAB supporting mlx format |
 
 ## Implementation detail
-See beamformit_step_by_step.html (and beamformit_step_by_step.mlx(as you can))
+See beamformit_step_by_step.{html,pdf} (and beamformit_step_by_step.mlx)
 
 Not all parts are the same. 
 The reference microphone acquisition and viterbi decoding are different from the original.
