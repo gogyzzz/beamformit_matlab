@@ -2,7 +2,7 @@
 % no 'post processing'
 % no 'channels elimination'
 
-function beamformit_1008(infilenames_cell, outfilename)
+function beamformit_1008_2(infilenames_cell, outfilename)
 
 nmic = size(infilenames_cell,2);
 npair = nmic - 1;
