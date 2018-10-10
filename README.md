@@ -10,7 +10,7 @@
 
 | script | requirement |
 |---|---|
-| beamformit.m | MATLAB supporting audioread (also you can use on OCTAVE by replace audioread with wavread) |
+| beamformit.m | MATLAB supporting audioread (also you can use on OCTAVE by installing signal package) |
 | beamformit_step_by_step.mlx | MATLAB supporting mlx format |
 
 ## Implementation detail
