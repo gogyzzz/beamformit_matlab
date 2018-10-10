@@ -1,5 +1,8 @@
 # A MATLAB implementation of CHiME4 baseline Beamformit
 
+**Please let me know if there are any bugs.**
+
+gogyzzz@gmail.com
 
 ## References
 
