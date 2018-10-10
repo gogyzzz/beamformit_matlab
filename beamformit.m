@@ -8,9 +8,9 @@
 %    
 % outfilename = 'enhanced.wav'; 
 
-% bf_refactored(infilenames_cell, outfilename);
+% beamformit(infilenames_cell, outfilename);
 
-function bf_refactored(infilenames_cell, outfilename)
+function beamformit(infilenames_cell, outfilename)
 
 [x, sr, nmic, npair, nsample] = get_x(infilenames_cell);
     
