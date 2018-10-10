@@ -1,5 +1,11 @@
 # A MATLAB implementation of CHiME4 baseline Beamformit
 
+
+## References
+
+- "Acoustic beamforming for speaker diarization of meetings", Xavier Anguera, Chuck Wooters and Javier Hernando, IEEE Transactions on Audio, Speech and Language Processing, September 2007, volume 15, number 7, pp.2011-2023.
+- [official beamformit github](https://github.com/xanguera/BeamformIt)
+
 ## Requirements
 
 | script | requirement |
