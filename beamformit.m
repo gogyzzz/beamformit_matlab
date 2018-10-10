@@ -86,7 +86,7 @@ function bf_refactored(infilenames_cell, outfilename)
     out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwin, nshift...
                     ,besttdoa, out_weight, overall_weight);
 
-    audiowrite(outfilename,out_x,16000);
+    audiowrite(outfilename,out_x,sr);
 
 end
 
