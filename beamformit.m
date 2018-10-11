@@ -122,7 +122,7 @@ function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft,
     avg_ccorr = zeros(nmic, nmic);
 
     for i = 1:npiece
-        st = i * scroll;
+        st = i * scrolㅣ + 1;
         ed = st + nwin - 1;
         if st + nfft >= nsample
             break;
