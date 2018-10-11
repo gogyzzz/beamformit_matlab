@@ -10,7 +10,7 @@
 
 % bf_refactored(infilenames_cell, outfilename);
 
-function bf_refactored(infilenames_cell, outfilename)
+function beamformit(infilenames_cell, outfilename)
 
 [x, sr, nmic, npair, nsample] = get_x(infilenames_cell);
     
@@ -22,9 +22,10 @@ function bf_refactored(infilenames_cell, outfilename)
     npiece = 200;
     nfft = 32768;
     nbest = 2;
-
+    nmask = 5;
+    
     % not the same of original beamformit. I don't know how.
-    ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest);
+    ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest, nmask);
 
     %% calculating scaling factor
     nsegment = 10;
@@ -47,7 +48,7 @@ function bf_refactored(infilenames_cell, outfilename)
 
     %% compute TDOA
     nbest = 4;
-    [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest);
+    [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest, nmask);
 
     %% find noise threshold
     threshold = get_noise_threshold(gcc_nbest, npair, nframe);
@@ -103,10 +104,15 @@ function [x, sr, nmic, npair, nsample] = get_x(infilenames_cell)
     end
 end
 
-function [sorted, indices] = maxk(list, k)
-    [sorted, indices] = sort(list,'descend');
-    sorted = sorted(1:k);
-    indices = indices(1:k);
+function [max_val, idx] = maxk(list, k, nmask)
+    max_val = zeros(k, 1);
+    idx = zeros(k,1);
+    for i = 1:k
+        [max_val(i), idx(i)] = max(list);
+        st = max(idx-nmask, 1);
+        ed = min(length(list(:)), idx+nmask);
+        list(st:ed) = 0;
+    end
 end
 
 function win = hamming_bfit(nwin)
@@ -116,15 +122,15 @@ function win = hamming_bfit(nwin)
     end
 end
 
-function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest)
+function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest, nmask)
     scroll = floor(nsample / (npiece+2)); 
 
     avg_ccorr = zeros(nmic, nmic);
 
     for i = 1:npiece
-        st = i * scroll;
+        st = i * scroll + 1;
         ed = st + nwin - 1;
-        if st + nfft >= nsample
+        if st + nfft/2 >= nsample
             break;
         end
 
@@ -135,15 +141,15 @@ function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft,
                 stft2 = fft([x(m2,st:ed) .* win, zeros(1,nfft-nwin)]);
                 numerator = stft1 .* conj(stft2);
                 ccorr = real(ifft(numerator ./ (abs(numerator))));
-                ccorr = [ccorr(1:481), ccorr(end-480+1:end)];
+                ccorr = [ccorr(end-479:end), ccorr(1:480)];
 
-                avg_ccorr(m1, m2) = avg_ccorr(m1, m2) + sum(maxk(ccorr, nbest));
+                avg_ccorr(m1, m2) = avg_ccorr(m1, m2) + sum(maxk(ccorr, nbest, nmask));
                 avg_ccorr(m2, m1) = avg_ccorr(m1, m2); 
             end
         end
     end
 
-    avg_ccorr = avg_ccorr / (nbest * npiece * (nmic-1));
+    avg_ccorr = avg_ccorr / (nbest * (i-1) * (nmic-1));
     [dummy, ref_mic] = max(sum(avg_ccorr));
 end
 
@@ -228,7 +234,7 @@ function mic2refpair = get_mic2refpair(pair2mic, ref_mic, nmic, npair)
     end
 end
 
-function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest)
+function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest, nmask)
     gcc_nbest = zeros(npair, nframe, nbest);
     tdoa_nbest = zeros(npair, nframe, nbest);
 
@@ -244,7 +250,7 @@ function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nfr
                 numerator = stft_m .* conj(stft_ref);
                 gcc = real(ifft(numerator ./ (eps+abs(numerator))));
                 gcc = [gcc(end-479:end), gcc(1:480)];
-                [gcc_nbest(p,t,:), tdoa_nbest(p,t,:)] = maxk(gcc, nbest);
+                [gcc_nbest(p,t,:), tdoa_nbest(p,t,:)] = maxk(gcc, nbest, nmask);
                 tdoa_nbest(p,t,:) = tdoa_nbest(p,t,:) - (481); % index shifting
 
             end
