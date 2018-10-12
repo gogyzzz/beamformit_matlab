@@ -658,8 +658,8 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
                 * out_weight(m,t)...
                 .* triwin(1:min(nwin,ref_ed-ref_st+1))...
                 * overall_weight);
-        if ref_ed < nsample
-            out_x(ref_ed+1:end) = out_x(ref_ed+1:end) + (x(ref_mic,ref_ed+1:end) * out_weight(m,t) * overall_weight);
-        end
+        %if ref_ed < nsample
+        %    out_x(ref_ed+1:end) = out_x(ref_ed+1:end) + (x(ref_mic,ref_ed+1:end) * out_weight(m,t) * overall_weight);
+        %end
     end
 end
