@@ -22,9 +22,10 @@ function beamformit(infilenames_cell, outfilename)
     npiece = 200;
     nfft = 32768;
     nbest = 2;
+    nmask = 5;
 
     % not the same of original beamformit. I don't know how.
-    ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest);
+    ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest, nmask);
 
     %% calculating scaling factor
     nsegment = 10;
@@ -47,13 +48,16 @@ function beamformit(infilenames_cell, outfilename)
 
     %% compute TDOA
     nbest = 4;
-    [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest);
-
+    nfft = 16384;
+    [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest, nmask);
+%     disp(gcc_nbest);
+    
     %% find noise threshold
     threshold = get_noise_threshold(gcc_nbest, npair, nframe);
-
+%     disp(threshold);
+    
     %% noise filtering
-    [tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold);
+    [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold);
 
     
     %% single channel viterbi
@@ -103,10 +107,23 @@ function [x, sr, nmic, npair, nsample] = get_x(infilenames_cell)
     end
 end
 
-function [sorted, indices] = maxk(list, k)
-    [sorted, indices] = sort(list,'descend');
-    sorted = sorted(1:k);
-    indices = indices(1:k);
+function [max_val, idx] = maxk(list, k, nmask)
+
+    for i = 2:(length(list(:))-1)
+        if list(i-1) < list(i) && list(i+1) < list(i)
+            list(i-1) = -9999;
+            list(i+1) = -9999;
+        end
+    end
+
+    max_val = zeros(k, 1);
+    idx = zeros(k,1);
+    for i = 1:k
+        [max_val(i), idx(i)] = max(list);
+        st = max(idx-nmask+1, 1);
+        ed = min(length(list(:)), idx+nmask-1);
+        list(st:ed) = 0;
+    end
 end
 
 function win = hamming_bfit(nwin)
@@ -116,15 +133,15 @@ function win = hamming_bfit(nwin)
     end
 end
 
-function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest)
+function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest, nmask)
     scroll = floor(nsample / (npiece+2)); 
 
     avg_ccorr = zeros(nmic, nmic);
 
     for i = 1:npiece
-        st = i * scrolㅣ + 1;
+        st = i * scroll + 1;
         ed = st + nwin - 1;
-        if st + nfft >= nsample
+        if st + nfft/2 >= nsample
             break;
         end
 
@@ -135,15 +152,15 @@ function ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft,
                 stft2 = fft([x(m2,st:ed) .* win, zeros(1,nfft-nwin)]);
                 numerator = stft1 .* conj(stft2);
                 ccorr = real(ifft(numerator ./ (abs(numerator))));
-                ccorr = [ccorr(1:481), ccorr(end-480+1:end)];
+                ccorr = [ccorr(end-479:end), ccorr(1:480)];
 
-                avg_ccorr(m1, m2) = avg_ccorr(m1, m2) + sum(maxk(ccorr, nbest));
+                avg_ccorr(m1, m2) = avg_ccorr(m1, m2) + sum(maxk(ccorr, nbest, nmask));
                 avg_ccorr(m2, m1) = avg_ccorr(m1, m2); 
             end
         end
     end
 
-    avg_ccorr = avg_ccorr / (nbest * npiece * (nmic-1));
+    avg_ccorr = avg_ccorr / (nbest * npiece);
     [dummy, ref_mic] = max(sum(avg_ccorr));
 end
 
@@ -228,26 +245,28 @@ function mic2refpair = get_mic2refpair(pair2mic, ref_mic, nmic, npair)
     end
 end
 
-function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest)
+function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nframe, win, nwin, nshift, nfft, nbest, nmask)
     gcc_nbest = zeros(npair, nframe, nbest);
     tdoa_nbest = zeros(npair, nframe, nbest);
 
     for t = 1:(nframe)
-        st = (t-1) * nshift + 1;
-        ed = st + nwin - 1;
-            for p = 1:npair
-
-                m = pair2mic(ref_mic,p);
-
-                stft_ref = fft([x(ref_mic,st:ed) .* win, zeros(1,nfft-nwin)]); 
-                stft_m = fft([x(m,st:ed) .* win, zeros(1,nfft-nwin)]);
-                numerator = stft_m .* conj(stft_ref);
-                gcc = real(ifft(numerator ./ (eps+abs(numerator))));
-                gcc = [gcc(end-479:end), gcc(1:480)];
-                [gcc_nbest(p,t,:), tdoa_nbest(p,t,:)] = maxk(gcc, nbest);
-                tdoa_nbest(p,t,:) = tdoa_nbest(p,t,:) - (481); % index shifting
-
-            end
+    st = (t-1) * nshift + 1;
+    ed = st + nwin - 1;
+%     disp(st);
+%     disp(ed);
+        for p = 1:npair
+            
+            m = pair2mic(ref_mic,p);
+            
+            stft_ref = fft([x(ref_mic,st:ed) .* win, zeros(1,nfft-nwin)]); 
+            stft_m = fft([x(m,st:ed) .* win, zeros(1,nfft-nwin)]);
+            numerator = stft_m .* conj(stft_ref);
+            gcc = real(ifft(numerator ./ (eps+abs(numerator))));
+            gcc = [gcc(end-479:end), gcc(1:480)];
+            [gcc_nbest(p,t,:), tdoa_nbest(p,t,:)] = maxk(gcc, nbest, nmask);
+            tdoa_nbest(p,t,:) = tdoa_nbest(p,t,:) - (481); % index shifting
+          
+        end
 
     end
 end
@@ -265,7 +284,7 @@ function threshold = get_noise_threshold(gcc_nbest, npair, nframe)
     % disp(threshold);
 end
 
-function [tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold)
+function [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold)
 
     noise_filter = zeros(npair, nframe);
 
@@ -438,7 +457,7 @@ function [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, tr
                 if gcc_nbest(m,t,ibest) > 0
                     emission2(t, l) = emission2(t, l) + log10(gcc_nbest(m,t,ibest));
                 else
-                    emission2(t, l) = -1000;
+                    emission2(t, l) = emission2(t, l) + -1000;
                 end
             end
         end
@@ -541,7 +560,11 @@ function localxcorr = compute_local_xcorr(besttdoa, x, nsample, nmic, npair, nfr
                     = sum(...
                     buf1(1:min_ed) .* buf2(1:min_ed)...
                     / (ener1 * ener2));
-
+                
+                if tmp_localxcorr(m1,m2,t) < 0
+                    tmp_localxcorr(m1,m2,t) = 0;
+                end
+                
                 tmp_localxcorr(m2,m1,t) = tmp_localxcorr(m1,m2,t);
             end
         end
@@ -588,6 +611,7 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
 
     out_x = zeros(1,nsample);
 
+    % figure;
     for t = 1:nframe
         ref_st = (t-1) * nshift + 1;
         ref_ed = min(ref_st + nwin - 1, nsample);
@@ -603,14 +627,17 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
             end
 
             triwin = triang(nwin)';
-            %triwin(1:end/2) = 1;
-            diff = 0;
+    %         if t == 1
+    %             triwin(1:nwin) = 1;
+    %         end
+
+             diff = 0;
 
             if (ref_ed - ref_st) ~= (ed - st) % if buf is small (always)
-                diff = ref_ed - ed;
+                    diff = ref_ed - ed;
             end
-            out_x(ref_st:ref_ed-diff)...
-                = out_x(ref_st:ref_ed-diff)...   
+            out_x(ref_st+diff:ref_ed)...
+                = out_x(ref_st+diff:ref_ed)...   
                 + (squeeze(x(m,st:ed))...
                 * out_weight(m,t)...
                 .* triwin(1:min(nwin,ed-st+1))...
@@ -618,7 +645,6 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
         end
     end
 
-    %% processing for end frame ( nframe + 1)
     ref_st = (t) * nshift + 1;
     ref_ed = min(ref_st + nwin - 1, nsample);
 
@@ -641,10 +667,10 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
 
         triwin = triang(nwin)';
     %     triwin(4001:end) = 1;
-        
-%         fprintf('diff: %d, ref_ed: %d, ref_st %d\n',diff, ref_ed, ref_st);
-%         fprintf('ed: %d, st %d\n', ed, st);
-%         fprintf('buf size: %d\n',size(buf,2));
+
+    %     fprintf('diff: %d, ref_ed: %d, ref_st %d\n',diff, ref_ed, ref_st);
+    %     fprintf('ed: %d, st %d\n', ed, st);
+    %     fprintf('buf size: %d\n',size(buf,2));
 
         out_x(ref_st:ref_ed)...
                 = out_x(ref_st:ref_ed)...   
@@ -652,8 +678,11 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
                 * out_weight(m,t)...
                 .* triwin(1:min(nwin,ref_ed-ref_st+1))...
                 * overall_weight);
-        if ref_ed < nsample
-            out_x(ref_ed+1:end) = out_x(ref_ed+1:end) + (x(ref_mic,ref_ed+1:end) * out_weight(m,t) * overall_weight);
-        end
+
+    % this part helps increasing recognition accuracy.
+    % not in original beamformit.
+    %     if ref_ed < nsample
+    %         out_x(ref_ed+1:end) = out_x(ref_ed+1:end) + (x(ref_mic,ref_ed+1:end) * out_weight(m,t) * overall_weight);
+    %     end
     end
 end
