@@ -17,10 +17,9 @@ gogyzzz@gmail.com
 | beamformit_step_by_step.mlx | MATLAB supporting mlx format |
 
 ## Implementation detail
-See beamformit_step_by_step.{html,pdf} (and beamformit_step_by_step.mlx)
+See beamformit_step_by_step.html (and beamformit_step_by_step.mlx)
 
-Not all parts are the same. 
-The reference microphone acquisition and viterbi decoding are different from the original.
+The viterbi decoding is different from the original.
 
 ## How to run
 
@@ -28,7 +27,6 @@ See beamformit.m
 
 ## Result
 
-my beamformit is slightly worse, especially in real_et05 task.
 
 ```sh
 ## original version
@@ -48,18 +46,15 @@ et05_real WER: 21.80% (Average), 30.08% (BUS), 20.62% (CAFE), 19.90% (PEDESTRIAN
 -------------------
 
 ## my version
-
-local/chime4_calc_wers.sh exp/tri3b_tr05_multi_noisy bfit5ch_1008 exp/tri3b_tr05_multi_noisy/graph_tgpr_5k
-
 -------------------
-best overall dt05 WER 14.16% (language model weight = 11)
+best overall dt05 WER 14.04% (language model weight = 11)
 -------------------
-dt05_simu WER: 14.70% (Average), 13.05% (BUS), 17.12% (CAFE), 12.39% (PEDESTRIAN), 16.24% (STREET)
+dt05_simu WER: 14.62% (Average), 12.95% (BUS), 17.23% (CAFE), 12.42% (PEDESTRIAN), 15.87% (STREET)
 -------------------
-dt05_real WER: 13.61% (Average), 16.82% (BUS), 13.35% (CAFE), 11.03% (PEDESTRIAN), 13.24% (STREET)
+dt05_real WER: 13.47% (Average), 16.70% (BUS), 13.17% (CAFE), 10.52% (PEDESTRIAN), 13.48% (STREET)
 -------------------
-et05_simu WER: 22.19% (Average), 16.51% (BUS), 23.66% (CAFE), 23.81% (PEDESTRIAN), 24.77% (STREET)
+et05_simu WER: 22.21% (Average), 16.55% (BUS), 23.96% (CAFE), 23.83% (PEDESTRIAN), 24.51% (STREET)
 -------------------
-et05_real WER: 22.83% (Average), 31.30% (BUS), 21.67% (CAFE), 21.49% (PEDESTRIAN), 16.88% (STREET)
+et05_real WER: 22.97% (Average), 30.77% (BUS), 22.26% (CAFE), 21.71% (PEDESTRIAN), 17.13% (STREET)
 -------------------
 ```
