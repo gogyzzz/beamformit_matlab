@@ -27,6 +27,10 @@ See beamformit.m
 
 ## Result
 
+|   | my_out_x - orig_out_x | error |
+|---|---|---|
+|   | ![](sample7_diff.png)  | ![](sample7_diff_zoomin.png)  |
+|   | ![](sample8_diff.png)  | ![](sample8_diff_zoomin.png)  |
 
 ```sh
 ## original version
