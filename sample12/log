@@ -1,0 +1,2849 @@
+Parameters settings(some of them):
+ Mandatory parameters:
+  scroll_size: 250
+  window_size: 500
+  source_dir: 
+  show_id: sample12
+  result_dir: ./output/sample12
+  channels_file: ./output/sample12/channels_file
+ Optional parameters:
+  uem_file: 
+  delay_variance: 5
+  ovl_variance: 20
+  do_optimum delays: 1
+  do_indiv_channels: 0
+  output_format: 0
+  do_xcorr_reference: 1
+  nbest_amount: 4
+  reference_channel: 0
+  Transition nbest probability: 25.000000
+  Percentage of noisy xcorr values: 10.000000
+Creating necessary directories
+Opening the input channels
+Extracting channel information for show sample12
+File 0: /home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH1.wav
+File 1: /home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH3.wav
+File 2: /home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH4.wav
+File 3: /home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH5.wav
+File 4: /home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH6.wav
+Filename: //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH1.wav
+File //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH1.wav (1 channels) open
+Filename: //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH3.wav
+File //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH3.wav (1 channels) open
+Filename: //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH4.wav
+File //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH4.wav (1 channels) open
+Filename: //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH5.wav
+File //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH5.wav (1 channels) open
+Filename: //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH6.wav
+File //home/haeyong/beamformit/sample12/F04_421C0207_BUS.CH6.wav (1 channels) open
+NumChannels is: 5, sampling rate is 16000
+Opening output channels
+Opening ./output/sample12/sample12.wav file
+Marginst for delays in frames: 480 in ms: 30
+Initializing...Total number of delays to be computed: 4
+Using an fft window of 8192 points for the window of 8000 points
+finished
+Setting the reference channel
+Determining the reference channel via average xcorr values
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.467956
+2nd xcorr calculation iteration 1: 0.182802
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.468335
+2nd xcorr calculation iteration 2: 0.183371
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.466639
+2nd xcorr calculation iteration 3: 0.179195
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.466589
+2nd xcorr calculation iteration 4: 0.173012
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.470742
+2nd xcorr calculation iteration 5: 0.173980
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.467015
+2nd xcorr calculation iteration 6: 0.167085
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.469639
+2nd xcorr calculation iteration 7: 0.167430
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.472376
+2nd xcorr calculation iteration 8: 0.166882
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.482794
+2nd xcorr calculation iteration 9: 0.174489
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.482348
+2nd xcorr calculation iteration 10: 0.171047
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.485190
+2nd xcorr calculation iteration 11: 0.170610
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.496144
+2nd xcorr calculation iteration 12: 0.179051
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.492792
+2nd xcorr calculation iteration 13: 0.173650
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.496379
+2nd xcorr calculation iteration 14: 0.173696
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.492106
+2nd xcorr calculation iteration 15: 0.167940
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.507831
+2nd xcorr calculation iteration 16: 0.179680
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.510531
+2nd xcorr calculation iteration 17: 0.179623
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.509149
+2nd xcorr calculation iteration 18: 0.176941
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.514874
+2nd xcorr calculation iteration 19: 0.180469
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.517229
+2nd xcorr calculation iteration 20: 0.182047
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.521260
+2nd xcorr calculation iteration 21: 0.184793
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.524535
+2nd xcorr calculation iteration 22: 0.187619
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.519290
+2nd xcorr calculation iteration 23: 0.182922
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.525435
+2nd xcorr calculation iteration 24: 0.187853
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.529343
+2nd xcorr calculation iteration 25: 0.192055
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.524319
+2nd xcorr calculation iteration 26: 0.186701
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.531535
+2nd xcorr calculation iteration 27: 0.193860
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.539865
+2nd xcorr calculation iteration 28: 0.201527
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.532089
+2nd xcorr calculation iteration 29: 0.193948
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.537385
+2nd xcorr calculation iteration 30: 0.198460
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.537351
+2nd xcorr calculation iteration 31: 0.198766
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.539686
+2nd xcorr calculation iteration 32: 0.200964
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.542316
+2nd xcorr calculation iteration 33: 0.203268
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.538989
+2nd xcorr calculation iteration 34: 0.199418
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.535354
+2nd xcorr calculation iteration 35: 0.196707
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.539363
+2nd xcorr calculation iteration 36: 0.200909
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.537328
+2nd xcorr calculation iteration 37: 0.199893
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.542926
+2nd xcorr calculation iteration 38: 0.205482
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.539944
+2nd xcorr calculation iteration 39: 0.201816
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.540477
+2nd xcorr calculation iteration 40: 0.201733
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.545292
+2nd xcorr calculation iteration 41: 0.206018
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.543569
+2nd xcorr calculation iteration 42: 0.205134
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.542556
+2nd xcorr calculation iteration 43: 0.204394
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.539628
+2nd xcorr calculation iteration 44: 0.201885
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.544064
+2nd xcorr calculation iteration 45: 0.205301
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.541097
+2nd xcorr calculation iteration 46: 0.202191
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.541391
+2nd xcorr calculation iteration 47: 0.202390
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.545130
+2nd xcorr calculation iteration 48: 0.206193
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.551034
+2nd xcorr calculation iteration 49: 0.210465
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.540377
+2nd xcorr calculation iteration 50: 0.200006
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.556834
+2nd xcorr calculation iteration 51: 0.214840
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.551620
+2nd xcorr calculation iteration 52: 0.209390
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.541066
+2nd xcorr calculation iteration 53: 0.198794
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.555101
+2nd xcorr calculation iteration 54: 0.212861
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.543422
+2nd xcorr calculation iteration 55: 0.200927
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.537498
+2nd xcorr calculation iteration 56: 0.196962
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.543455
+2nd xcorr calculation iteration 57: 0.203298
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.540520
+2nd xcorr calculation iteration 58: 0.200991
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.548156
+2nd xcorr calculation iteration 59: 0.207500
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.544054
+2nd xcorr calculation iteration 60: 0.204642
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.537139
+2nd xcorr calculation iteration 61: 0.198260
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.532342
+2nd xcorr calculation iteration 62: 0.194502
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.535122
+2nd xcorr calculation iteration 63: 0.198795
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.534657
+2nd xcorr calculation iteration 64: 0.198179
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.545050
+2nd xcorr calculation iteration 65: 0.209052
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.529129
+2nd xcorr calculation iteration 66: 0.194850
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.528495
+2nd xcorr calculation iteration 67: 0.194949
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.534671
+2nd xcorr calculation iteration 68: 0.201751
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.547989
+2nd xcorr calculation iteration 69: 0.218072
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.534614
+2nd xcorr calculation iteration 70: 0.204398
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.546359
+2nd xcorr calculation iteration 71: 0.217226
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.520183
+2nd xcorr calculation iteration 72: 0.192484
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.518534
+2nd xcorr calculation iteration 73: 0.190750
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.537845
+2nd xcorr calculation iteration 74: 0.211987
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.535599
+2nd xcorr calculation iteration 75: 0.209637
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.519973
+2nd xcorr calculation iteration 76: 0.195967
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.512988
+2nd xcorr calculation iteration 77: 0.190952
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.505558
+2nd xcorr calculation iteration 78: 0.186864
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.507183
+2nd xcorr calculation iteration 79: 0.189510
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.504342
+2nd xcorr calculation iteration 80: 0.189073
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.510290
+2nd xcorr calculation iteration 81: 0.194915
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.499321
+2nd xcorr calculation iteration 82: 0.186009
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.511708
+2nd xcorr calculation iteration 83: 0.198755
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 59.483212
+Average xcorr final: 0.148708
+Computing the average xcorr between 0 and 1
+the xcorr_values between 0 and 1 is 0.148708
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.341056
+2nd xcorr calculation iteration 1: 0.092541
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.350434
+2nd xcorr calculation iteration 2: 0.104016
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.335063
+2nd xcorr calculation iteration 3: 0.095042
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.348592
+2nd xcorr calculation iteration 4: 0.100443
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.353777
+2nd xcorr calculation iteration 5: 0.104636
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.360305
+2nd xcorr calculation iteration 6: 0.109488
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.363460
+2nd xcorr calculation iteration 7: 0.111735
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.358055
+2nd xcorr calculation iteration 8: 0.106843
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.367689
+2nd xcorr calculation iteration 9: 0.116223
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.365426
+2nd xcorr calculation iteration 10: 0.114320
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.362985
+2nd xcorr calculation iteration 11: 0.112989
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.367273
+2nd xcorr calculation iteration 12: 0.118237
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.374620
+2nd xcorr calculation iteration 13: 0.126081
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.384527
+2nd xcorr calculation iteration 14: 0.137379
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.387379
+2nd xcorr calculation iteration 15: 0.140496
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.382949
+2nd xcorr calculation iteration 16: 0.141216
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.374505
+2nd xcorr calculation iteration 17: 0.135080
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.393742
+2nd xcorr calculation iteration 18: 0.156136
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.392236
+2nd xcorr calculation iteration 19: 0.157484
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.394574
+2nd xcorr calculation iteration 20: 0.163148
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.400053
+2nd xcorr calculation iteration 21: 0.170482
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.401664
+2nd xcorr calculation iteration 22: 0.174763
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.402588
+2nd xcorr calculation iteration 23: 0.177007
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.407839
+2nd xcorr calculation iteration 24: 0.185173
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.411092
+2nd xcorr calculation iteration 25: 0.190235
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.414299
+2nd xcorr calculation iteration 26: 0.195226
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.416051
+2nd xcorr calculation iteration 27: 0.200360
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.417069
+2nd xcorr calculation iteration 28: 0.204410
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.416722
+2nd xcorr calculation iteration 29: 0.207812
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.417234
+2nd xcorr calculation iteration 30: 0.211847
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.413173
+2nd xcorr calculation iteration 31: 0.210500
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.411731
+2nd xcorr calculation iteration 32: 0.211111
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.418046
+2nd xcorr calculation iteration 33: 0.219347
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.413518
+2nd xcorr calculation iteration 34: 0.217710
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.424203
+2nd xcorr calculation iteration 35: 0.229632
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.422805
+2nd xcorr calculation iteration 36: 0.231029
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.422986
+2nd xcorr calculation iteration 37: 0.232956
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.423280
+2nd xcorr calculation iteration 38: 0.235736
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.418032
+2nd xcorr calculation iteration 39: 0.232819
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.418932
+2nd xcorr calculation iteration 40: 0.235292
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.427266
+2nd xcorr calculation iteration 41: 0.244190
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.427236
+2nd xcorr calculation iteration 42: 0.245906
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.420591
+2nd xcorr calculation iteration 43: 0.242038
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.427465
+2nd xcorr calculation iteration 44: 0.248757
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.424532
+2nd xcorr calculation iteration 45: 0.246006
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.425713
+2nd xcorr calculation iteration 46: 0.247614
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.424887
+2nd xcorr calculation iteration 47: 0.247636
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.424118
+2nd xcorr calculation iteration 48: 0.247132
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.415953
+2nd xcorr calculation iteration 49: 0.240168
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.428199
+2nd xcorr calculation iteration 50: 0.251609
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.420768
+2nd xcorr calculation iteration 51: 0.245182
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.425437
+2nd xcorr calculation iteration 52: 0.250096
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.429755
+2nd xcorr calculation iteration 53: 0.255583
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.410505
+2nd xcorr calculation iteration 54: 0.240075
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.419028
+2nd xcorr calculation iteration 55: 0.249755
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.424239
+2nd xcorr calculation iteration 56: 0.255651
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.411149
+2nd xcorr calculation iteration 57: 0.244728
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.414011
+2nd xcorr calculation iteration 58: 0.248765
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.415514
+2nd xcorr calculation iteration 59: 0.251306
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.419742
+2nd xcorr calculation iteration 60: 0.256563
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.412587
+2nd xcorr calculation iteration 61: 0.251553
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.420114
+2nd xcorr calculation iteration 62: 0.257541
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.415642
+2nd xcorr calculation iteration 63: 0.254640
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.411778
+2nd xcorr calculation iteration 64: 0.252207
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.411935
+2nd xcorr calculation iteration 65: 0.252316
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.402556
+2nd xcorr calculation iteration 66: 0.243540
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.409183
+2nd xcorr calculation iteration 67: 0.251324
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.399212
+2nd xcorr calculation iteration 68: 0.242955
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.414381
+2nd xcorr calculation iteration 69: 0.257358
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.411449
+2nd xcorr calculation iteration 70: 0.255758
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.412119
+2nd xcorr calculation iteration 71: 0.255540
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.404052
+2nd xcorr calculation iteration 72: 0.250926
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.405501
+2nd xcorr calculation iteration 73: 0.253069
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.397593
+2nd xcorr calculation iteration 74: 0.247206
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.381016
+2nd xcorr calculation iteration 75: 0.233702
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.389510
+2nd xcorr calculation iteration 76: 0.244797
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.389129
+2nd xcorr calculation iteration 77: 0.245960
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.388520
+2nd xcorr calculation iteration 78: 0.247473
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.385907
+2nd xcorr calculation iteration 79: 0.246965
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.385322
+2nd xcorr calculation iteration 80: 0.247745
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.374375
+2nd xcorr calculation iteration 81: 0.241388
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.376715
+2nd xcorr calculation iteration 82: 0.246067
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.373333
+2nd xcorr calculation iteration 83: 0.245481
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 50.559261
+Average xcorr final: 0.126398
+Computing the average xcorr between 0 and 2
+the xcorr_values between 0 and 2 is 0.126398
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.333369
+2nd xcorr calculation iteration 1: 0.160730
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.326189
+2nd xcorr calculation iteration 2: 0.152923
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.332133
+2nd xcorr calculation iteration 3: 0.156402
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.340763
+2nd xcorr calculation iteration 4: 0.159459
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.346001
+2nd xcorr calculation iteration 5: 0.162423
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.342258
+2nd xcorr calculation iteration 6: 0.157252
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.341229
+2nd xcorr calculation iteration 7: 0.153852
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.337159
+2nd xcorr calculation iteration 8: 0.148257
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.353584
+2nd xcorr calculation iteration 9: 0.162149
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.354851
+2nd xcorr calculation iteration 10: 0.160927
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.349692
+2nd xcorr calculation iteration 11: 0.153701
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.353406
+2nd xcorr calculation iteration 12: 0.154916
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.362629
+2nd xcorr calculation iteration 13: 0.160929
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.367818
+2nd xcorr calculation iteration 14: 0.163546
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.371652
+2nd xcorr calculation iteration 15: 0.164086
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.369577
+2nd xcorr calculation iteration 16: 0.160221
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.370168
+2nd xcorr calculation iteration 17: 0.158365
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.378776
+2nd xcorr calculation iteration 18: 0.164093
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.377792
+2nd xcorr calculation iteration 19: 0.161689
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.382288
+2nd xcorr calculation iteration 20: 0.163637
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.385358
+2nd xcorr calculation iteration 21: 0.164556
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.387830
+2nd xcorr calculation iteration 22: 0.164684
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.388910
+2nd xcorr calculation iteration 23: 0.163705
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.393775
+2nd xcorr calculation iteration 24: 0.166858
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.396342
+2nd xcorr calculation iteration 25: 0.167238
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.399083
+2nd xcorr calculation iteration 26: 0.168233
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.401204
+2nd xcorr calculation iteration 27: 0.169220
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.402740
+2nd xcorr calculation iteration 28: 0.169432
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.404484
+2nd xcorr calculation iteration 29: 0.169861
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.405869
+2nd xcorr calculation iteration 30: 0.170902
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.407227
+2nd xcorr calculation iteration 31: 0.171120
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.404804
+2nd xcorr calculation iteration 32: 0.168283
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.409343
+2nd xcorr calculation iteration 33: 0.171845
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.407616
+2nd xcorr calculation iteration 34: 0.168078
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.416329
+2nd xcorr calculation iteration 35: 0.175520
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.414894
+2nd xcorr calculation iteration 36: 0.173691
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.417643
+2nd xcorr calculation iteration 37: 0.176045
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.417757
+2nd xcorr calculation iteration 38: 0.176383
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.416289
+2nd xcorr calculation iteration 39: 0.174310
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.417371
+2nd xcorr calculation iteration 40: 0.174974
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.423439
+2nd xcorr calculation iteration 41: 0.179391
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.424479
+2nd xcorr calculation iteration 42: 0.179103
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.422964
+2nd xcorr calculation iteration 43: 0.176848
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.427069
+2nd xcorr calculation iteration 44: 0.180314
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.424048
+2nd xcorr calculation iteration 45: 0.176997
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.426255
+2nd xcorr calculation iteration 46: 0.179365
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.427831
+2nd xcorr calculation iteration 47: 0.181449
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.422687
+2nd xcorr calculation iteration 48: 0.177428
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.418734
+2nd xcorr calculation iteration 49: 0.175334
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.426898
+2nd xcorr calculation iteration 50: 0.184442
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.422467
+2nd xcorr calculation iteration 51: 0.181805
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.405489
+2nd xcorr calculation iteration 52: 0.165922
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.425871
+2nd xcorr calculation iteration 53: 0.187272
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.417705
+2nd xcorr calculation iteration 54: 0.180652
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.418696
+2nd xcorr calculation iteration 55: 0.184510
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.415454
+2nd xcorr calculation iteration 56: 0.183836
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.406667
+2nd xcorr calculation iteration 57: 0.176901
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.414417
+2nd xcorr calculation iteration 58: 0.186982
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.413391
+2nd xcorr calculation iteration 59: 0.186877
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.397853
+2nd xcorr calculation iteration 60: 0.172712
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.407475
+2nd xcorr calculation iteration 61: 0.184325
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.414307
+2nd xcorr calculation iteration 62: 0.192200
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.412186
+2nd xcorr calculation iteration 63: 0.192676
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.408094
+2nd xcorr calculation iteration 64: 0.189666
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.403283
+2nd xcorr calculation iteration 65: 0.186030
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.408445
+2nd xcorr calculation iteration 66: 0.192422
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.406135
+2nd xcorr calculation iteration 67: 0.191681
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.400673
+2nd xcorr calculation iteration 68: 0.187260
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.408498
+2nd xcorr calculation iteration 69: 0.194596
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.405707
+2nd xcorr calculation iteration 70: 0.194309
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.393790
+2nd xcorr calculation iteration 71: 0.186333
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.397486
+2nd xcorr calculation iteration 72: 0.191376
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.396965
+2nd xcorr calculation iteration 73: 0.193839
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.396730
+2nd xcorr calculation iteration 74: 0.194485
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.376675
+2nd xcorr calculation iteration 75: 0.176815
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.388453
+2nd xcorr calculation iteration 76: 0.190568
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.388481
+2nd xcorr calculation iteration 77: 0.191033
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.389187
+2nd xcorr calculation iteration 78: 0.192297
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.383536
+2nd xcorr calculation iteration 79: 0.188188
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.381120
+2nd xcorr calculation iteration 80: 0.186515
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.371642
+2nd xcorr calculation iteration 81: 0.178994
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.374831
+2nd xcorr calculation iteration 82: 0.183947
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.369098
+2nd xcorr calculation iteration 83: 0.179474
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 47.173084
+Average xcorr final: 0.117933
+Computing the average xcorr between 0 and 3
+the xcorr_values between 0 and 3 is 0.117933
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.147343
+2nd xcorr calculation iteration 1: 0.136663
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.135069
+2nd xcorr calculation iteration 2: 0.124515
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.137441
+2nd xcorr calculation iteration 3: 0.125502
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.136558
+2nd xcorr calculation iteration 4: 0.123560
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.143329
+2nd xcorr calculation iteration 5: 0.125838
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.147754
+2nd xcorr calculation iteration 6: 0.128471
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.151647
+2nd xcorr calculation iteration 7: 0.130794
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.136900
+2nd xcorr calculation iteration 8: 0.124319
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.152286
+2nd xcorr calculation iteration 9: 0.125381
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.149338
+2nd xcorr calculation iteration 10: 0.118576
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.152254
+2nd xcorr calculation iteration 11: 0.119216
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.153426
+2nd xcorr calculation iteration 12: 0.117017
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.159185
+2nd xcorr calculation iteration 13: 0.120068
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.166663
+2nd xcorr calculation iteration 14: 0.123610
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.172362
+2nd xcorr calculation iteration 15: 0.126428
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.167808
+2nd xcorr calculation iteration 16: 0.115869
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.167441
+2nd xcorr calculation iteration 17: 0.112251
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.178472
+2nd xcorr calculation iteration 18: 0.123934
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.177099
+2nd xcorr calculation iteration 19: 0.121714
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.181910
+2nd xcorr calculation iteration 20: 0.125039
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.186857
+2nd xcorr calculation iteration 21: 0.129838
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.186968
+2nd xcorr calculation iteration 22: 0.129802
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.195033
+2nd xcorr calculation iteration 23: 0.139027
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.193894
+2nd xcorr calculation iteration 24: 0.135630
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.199582
+2nd xcorr calculation iteration 25: 0.140162
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.202844
+2nd xcorr calculation iteration 26: 0.142323
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.206647
+2nd xcorr calculation iteration 27: 0.144805
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.208857
+2nd xcorr calculation iteration 28: 0.144474
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.211164
+2nd xcorr calculation iteration 29: 0.144159
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.212578
+2nd xcorr calculation iteration 30: 0.142834
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.214064
+2nd xcorr calculation iteration 31: 0.142872
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.215039
+2nd xcorr calculation iteration 32: 0.141568
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.216792
+2nd xcorr calculation iteration 33: 0.142295
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.217855
+2nd xcorr calculation iteration 34: 0.143232
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.225068
+2nd xcorr calculation iteration 35: 0.150900
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.226183
+2nd xcorr calculation iteration 36: 0.150609
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.229313
+2nd xcorr calculation iteration 37: 0.152045
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.228084
+2nd xcorr calculation iteration 38: 0.149318
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.228943
+2nd xcorr calculation iteration 39: 0.148850
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.227710
+2nd xcorr calculation iteration 40: 0.146353
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.236780
+2nd xcorr calculation iteration 41: 0.155845
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.237714
+2nd xcorr calculation iteration 42: 0.158858
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.235925
+2nd xcorr calculation iteration 43: 0.154494
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.240539
+2nd xcorr calculation iteration 44: 0.159400
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.238938
+2nd xcorr calculation iteration 45: 0.157206
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.241542
+2nd xcorr calculation iteration 46: 0.159741
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.241720
+2nd xcorr calculation iteration 47: 0.160495
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.240163
+2nd xcorr calculation iteration 48: 0.158664
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.236950
+2nd xcorr calculation iteration 49: 0.154286
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.242306
+2nd xcorr calculation iteration 50: 0.161172
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.227084
+2nd xcorr calculation iteration 51: 0.161176
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.231554
+2nd xcorr calculation iteration 52: 0.157583
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.244549
+2nd xcorr calculation iteration 53: 0.162448
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.238316
+2nd xcorr calculation iteration 54: 0.154135
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.241137
+2nd xcorr calculation iteration 55: 0.156923
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.237793
+2nd xcorr calculation iteration 56: 0.154983
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.228904
+2nd xcorr calculation iteration 57: 0.159850
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.237722
+2nd xcorr calculation iteration 58: 0.154462
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.224179
+2nd xcorr calculation iteration 59: 0.163066
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.233325
+2nd xcorr calculation iteration 60: 0.151653
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.219094
+2nd xcorr calculation iteration 61: 0.165484
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.215186
+2nd xcorr calculation iteration 62: 0.168774
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.232491
+2nd xcorr calculation iteration 63: 0.151052
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.229824
+2nd xcorr calculation iteration 64: 0.151834
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.227415
+2nd xcorr calculation iteration 65: 0.153410
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.232216
+2nd xcorr calculation iteration 66: 0.149773
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.226860
+2nd xcorr calculation iteration 67: 0.150754
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.226867
+2nd xcorr calculation iteration 68: 0.149010
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.228313
+2nd xcorr calculation iteration 69: 0.152030
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.203542
+2nd xcorr calculation iteration 70: 0.167712
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.211931
+2nd xcorr calculation iteration 71: 0.154340
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.216682
+2nd xcorr calculation iteration 72: 0.150239
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.202615
+2nd xcorr calculation iteration 73: 0.160947
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.213748
+2nd xcorr calculation iteration 74: 0.146176
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.206927
+2nd xcorr calculation iteration 75: 0.154552
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.213787
+2nd xcorr calculation iteration 76: 0.146051
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.211266
+2nd xcorr calculation iteration 77: 0.144841
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.212601
+2nd xcorr calculation iteration 78: 0.139679
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.208852
+2nd xcorr calculation iteration 79: 0.141929
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.204407
+2nd xcorr calculation iteration 80: 0.142340
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.195563
+2nd xcorr calculation iteration 81: 0.150957
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.202035
+2nd xcorr calculation iteration 82: 0.139875
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.194444
+2nd xcorr calculation iteration 83: 0.144757
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 28.984385
+Average xcorr final: 0.072461
+Computing the average xcorr between 0 and 4
+the xcorr_values between 0 and 4 is 0.072461
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.283754
+2nd xcorr calculation iteration 1: 0.215175
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.292200
+2nd xcorr calculation iteration 2: 0.225506
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.271036
+2nd xcorr calculation iteration 3: 0.200074
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.284556
+2nd xcorr calculation iteration 4: 0.212840
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.290143
+2nd xcorr calculation iteration 5: 0.216808
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.292590
+2nd xcorr calculation iteration 6: 0.217705
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.296900
+2nd xcorr calculation iteration 7: 0.220920
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.303861
+2nd xcorr calculation iteration 8: 0.225430
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.304534
+2nd xcorr calculation iteration 9: 0.224027
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.302183
+2nd xcorr calculation iteration 10: 0.219396
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.312072
+2nd xcorr calculation iteration 11: 0.226592
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.302992
+2nd xcorr calculation iteration 12: 0.215504
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.310996
+2nd xcorr calculation iteration 13: 0.222069
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.308301
+2nd xcorr calculation iteration 14: 0.216125
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.308693
+2nd xcorr calculation iteration 15: 0.213054
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.317691
+2nd xcorr calculation iteration 16: 0.218993
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.334661
+2nd xcorr calculation iteration 17: 0.233803
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.319537
+2nd xcorr calculation iteration 18: 0.215992
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.323528
+2nd xcorr calculation iteration 19: 0.217525
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.325221
+2nd xcorr calculation iteration 20: 0.216510
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.326839
+2nd xcorr calculation iteration 21: 0.215466
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.332478
+2nd xcorr calculation iteration 22: 0.218946
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.331606
+2nd xcorr calculation iteration 23: 0.213486
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.329787
+2nd xcorr calculation iteration 24: 0.209015
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.336927
+2nd xcorr calculation iteration 25: 0.212950
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.329840
+2nd xcorr calculation iteration 26: 0.203019
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.340219
+2nd xcorr calculation iteration 27: 0.210958
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.347504
+2nd xcorr calculation iteration 28: 0.215564
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.339641
+2nd xcorr calculation iteration 29: 0.206210
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.343187
+2nd xcorr calculation iteration 30: 0.208253
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.352909
+2nd xcorr calculation iteration 31: 0.215993
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.355801
+2nd xcorr calculation iteration 32: 0.216717
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.354694
+2nd xcorr calculation iteration 33: 0.212709
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.355266
+2nd xcorr calculation iteration 34: 0.211136
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.350793
+2nd xcorr calculation iteration 35: 0.204174
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.358240
+2nd xcorr calculation iteration 36: 0.209376
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.356604
+2nd xcorr calculation iteration 37: 0.206264
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.358404
+2nd xcorr calculation iteration 38: 0.205801
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.367391
+2nd xcorr calculation iteration 39: 0.213347
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.366989
+2nd xcorr calculation iteration 40: 0.212781
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.366583
+2nd xcorr calculation iteration 41: 0.211357
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.365584
+2nd xcorr calculation iteration 42: 0.210096
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.370496
+2nd xcorr calculation iteration 43: 0.215421
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.365142
+2nd xcorr calculation iteration 44: 0.210527
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.368144
+2nd xcorr calculation iteration 45: 0.214151
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.365615
+2nd xcorr calculation iteration 46: 0.211563
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.366909
+2nd xcorr calculation iteration 47: 0.212345
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.375390
+2nd xcorr calculation iteration 48: 0.220424
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.375814
+2nd xcorr calculation iteration 49: 0.219520
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.370328
+2nd xcorr calculation iteration 50: 0.213574
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.380982
+2nd xcorr calculation iteration 51: 0.224112
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.387398
+2nd xcorr calculation iteration 52: 0.229973
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.370412
+2nd xcorr calculation iteration 53: 0.213131
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.376261
+2nd xcorr calculation iteration 54: 0.219994
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.380599
+2nd xcorr calculation iteration 55: 0.225180
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.371021
+2nd xcorr calculation iteration 56: 0.215885
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.386837
+2nd xcorr calculation iteration 57: 0.233389
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.376615
+2nd xcorr calculation iteration 58: 0.222841
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.383730
+2nd xcorr calculation iteration 59: 0.230711
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.382992
+2nd xcorr calculation iteration 60: 0.229881
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.381055
+2nd xcorr calculation iteration 61: 0.226931
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.372688
+2nd xcorr calculation iteration 62: 0.218533
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.378550
+2nd xcorr calculation iteration 63: 0.223874
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.374103
+2nd xcorr calculation iteration 64: 0.220561
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.388871
+2nd xcorr calculation iteration 65: 0.236363
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.381760
+2nd xcorr calculation iteration 66: 0.229938
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.371531
+2nd xcorr calculation iteration 67: 0.220842
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.369772
+2nd xcorr calculation iteration 68: 0.220034
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.387928
+2nd xcorr calculation iteration 69: 0.239502
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.377044
+2nd xcorr calculation iteration 70: 0.228925
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.387592
+2nd xcorr calculation iteration 71: 0.238256
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.363650
+2nd xcorr calculation iteration 72: 0.217267
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.360101
+2nd xcorr calculation iteration 73: 0.213230
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.372386
+2nd xcorr calculation iteration 74: 0.228018
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.361512
+2nd xcorr calculation iteration 75: 0.217795
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.370718
+2nd xcorr calculation iteration 76: 0.228726
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.362116
+2nd xcorr calculation iteration 77: 0.221256
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.354532
+2nd xcorr calculation iteration 78: 0.215159
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.353312
+2nd xcorr calculation iteration 79: 0.215492
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.346333
+2nd xcorr calculation iteration 80: 0.209888
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.355401
+2nd xcorr calculation iteration 81: 0.220352
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.346890
+2nd xcorr calculation iteration 82: 0.213820
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.359479
+2nd xcorr calculation iteration 83: 0.227425
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 47.097225
+Average xcorr final: 0.117743
+Computing the average xcorr between 1 and 2
+the xcorr_values between 1 and 2 is 0.117743
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.294203
+2nd xcorr calculation iteration 1: 0.133053
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.285845
+2nd xcorr calculation iteration 2: 0.121544
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.289390
+2nd xcorr calculation iteration 3: 0.122344
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.294526
+2nd xcorr calculation iteration 4: 0.121150
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.302888
+2nd xcorr calculation iteration 5: 0.126400
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.306654
+2nd xcorr calculation iteration 6: 0.127407
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.314381
+2nd xcorr calculation iteration 7: 0.133121
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.314976
+2nd xcorr calculation iteration 8: 0.130082
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.313739
+2nd xcorr calculation iteration 9: 0.125429
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.310187
+2nd xcorr calculation iteration 10: 0.118998
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.321285
+2nd xcorr calculation iteration 11: 0.126032
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.316488
+2nd xcorr calculation iteration 12: 0.116816
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.322262
+2nd xcorr calculation iteration 13: 0.119591
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.322593
+2nd xcorr calculation iteration 14: 0.115309
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.322763
+2nd xcorr calculation iteration 15: 0.110299
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.332730
+2nd xcorr calculation iteration 16: 0.116870
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.339905
+2nd xcorr calculation iteration 17: 0.120653
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.336408
+2nd xcorr calculation iteration 18: 0.112987
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.341803
+2nd xcorr calculation iteration 19: 0.114944
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.342871
+2nd xcorr calculation iteration 20: 0.112262
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.345489
+2nd xcorr calculation iteration 21: 0.111099
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.349313
+2nd xcorr calculation iteration 22: 0.111669
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.349223
+2nd xcorr calculation iteration 23: 0.108687
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.349052
+2nd xcorr calculation iteration 24: 0.106206
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.356547
+2nd xcorr calculation iteration 25: 0.110385
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.352239
+2nd xcorr calculation iteration 26: 0.103900
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.359441
+2nd xcorr calculation iteration 27: 0.108558
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.367051
+2nd xcorr calculation iteration 28: 0.114224
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.362589
+2nd xcorr calculation iteration 29: 0.107006
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.366671
+2nd xcorr calculation iteration 30: 0.108680
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.370663
+2nd xcorr calculation iteration 31: 0.110590
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.374842
+2nd xcorr calculation iteration 32: 0.112410
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.377618
+2nd xcorr calculation iteration 33: 0.113026
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.378613
+2nd xcorr calculation iteration 34: 0.111799
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.374448
+2nd xcorr calculation iteration 35: 0.105024
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.381657
+2nd xcorr calculation iteration 36: 0.110923
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.379144
+2nd xcorr calculation iteration 37: 0.106937
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.382183
+2nd xcorr calculation iteration 38: 0.108644
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.386800
+2nd xcorr calculation iteration 39: 0.112149
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.387179
+2nd xcorr calculation iteration 40: 0.111630
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.388307
+2nd xcorr calculation iteration 41: 0.111372
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.384648
+2nd xcorr calculation iteration 42: 0.106757
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.388592
+2nd xcorr calculation iteration 43: 0.109738
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.388421
+2nd xcorr calculation iteration 44: 0.107823
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.391497
+2nd xcorr calculation iteration 45: 0.110164
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.390918
+2nd xcorr calculation iteration 46: 0.108392
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.391934
+2nd xcorr calculation iteration 47: 0.108831
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.399247
+2nd xcorr calculation iteration 48: 0.115653
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.397192
+2nd xcorr calculation iteration 49: 0.112888
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.394568
+2nd xcorr calculation iteration 50: 0.109800
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.406143
+2nd xcorr calculation iteration 51: 0.121117
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.404136
+2nd xcorr calculation iteration 52: 0.119667
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.393840
+2nd xcorr calculation iteration 53: 0.111297
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.412045
+2nd xcorr calculation iteration 54: 0.129344
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.394630
+2nd xcorr calculation iteration 55: 0.112887
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.394819
+2nd xcorr calculation iteration 56: 0.113979
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.403321
+2nd xcorr calculation iteration 57: 0.124571
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.393778
+2nd xcorr calculation iteration 58: 0.115809
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.405414
+2nd xcorr calculation iteration 59: 0.128325
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.396991
+2nd xcorr calculation iteration 60: 0.121483
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.401072
+2nd xcorr calculation iteration 61: 0.125681
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.392085
+2nd xcorr calculation iteration 62: 0.117268
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.392029
+2nd xcorr calculation iteration 63: 0.118446
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.390525
+2nd xcorr calculation iteration 64: 0.117952
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.401102
+2nd xcorr calculation iteration 65: 0.128937
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.387629
+2nd xcorr calculation iteration 66: 0.116637
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.387605
+2nd xcorr calculation iteration 67: 0.117978
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.399524
+2nd xcorr calculation iteration 68: 0.130448
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.404024
+2nd xcorr calculation iteration 69: 0.135954
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.392080
+2nd xcorr calculation iteration 70: 0.126176
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.389836
+2nd xcorr calculation iteration 71: 0.128500
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.375367
+2nd xcorr calculation iteration 72: 0.114487
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.374282
+2nd xcorr calculation iteration 73: 0.114700
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.392055
+2nd xcorr calculation iteration 74: 0.133756
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.375080
+2nd xcorr calculation iteration 75: 0.117738
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.378728
+2nd xcorr calculation iteration 76: 0.123643
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.371122
+2nd xcorr calculation iteration 77: 0.118335
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.361965
+2nd xcorr calculation iteration 78: 0.114067
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.366277
+2nd xcorr calculation iteration 79: 0.118791
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.358020
+2nd xcorr calculation iteration 80: 0.112971
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.358324
+2nd xcorr calculation iteration 81: 0.115111
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.359811
+2nd xcorr calculation iteration 82: 0.119162
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.365781
+2nd xcorr calculation iteration 83: 0.127072
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 40.083961
+Average xcorr final: 0.100210
+Computing the average xcorr between 1 and 3
+the xcorr_values between 1 and 3 is 0.100210
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.217014
+2nd xcorr calculation iteration 1: 0.160443
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.188075
+2nd xcorr calculation iteration 2: 0.134135
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.202812
+2nd xcorr calculation iteration 3: 0.148412
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.190911
+2nd xcorr calculation iteration 4: 0.139617
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.194490
+2nd xcorr calculation iteration 5: 0.143508
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.193441
+2nd xcorr calculation iteration 6: 0.143792
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.196720
+2nd xcorr calculation iteration 7: 0.148861
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.200469
+2nd xcorr calculation iteration 8: 0.153844
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.197666
+2nd xcorr calculation iteration 9: 0.152193
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.194481
+2nd xcorr calculation iteration 10: 0.151132
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.198076
+2nd xcorr calculation iteration 11: 0.156019
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.191257
+2nd xcorr calculation iteration 12: 0.151401
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.192266
+2nd xcorr calculation iteration 13: 0.156172
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.189151
+2nd xcorr calculation iteration 14: 0.155650
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.183366
+2nd xcorr calculation iteration 15: 0.152010
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.191169
+2nd xcorr calculation iteration 16: 0.164180
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.191739
+2nd xcorr calculation iteration 17: 0.170026
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.182122
+2nd xcorr calculation iteration 18: 0.165850
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.182340
+2nd xcorr calculation iteration 19: 0.171826
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.179431
+2nd xcorr calculation iteration 20: 0.175050
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.178336
+2nd xcorr calculation iteration 21: 0.177295
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.183482
+2nd xcorr calculation iteration 22: 0.174904
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.184225
+2nd xcorr calculation iteration 23: 0.169564
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.192906
+2nd xcorr calculation iteration 24: 0.171416
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.199196
+2nd xcorr calculation iteration 25: 0.170469
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.197538
+2nd xcorr calculation iteration 26: 0.161662
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.206598
+2nd xcorr calculation iteration 27: 0.162792
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.216114
+2nd xcorr calculation iteration 28: 0.164885
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.214159
+2nd xcorr calculation iteration 29: 0.159520
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.220020
+2nd xcorr calculation iteration 30: 0.160232
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.227490
+2nd xcorr calculation iteration 31: 0.158266
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.232808
+2nd xcorr calculation iteration 32: 0.159159
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.238723
+2nd xcorr calculation iteration 33: 0.158144
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.240671
+2nd xcorr calculation iteration 34: 0.159718
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.240839
+2nd xcorr calculation iteration 35: 0.164166
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.248891
+2nd xcorr calculation iteration 36: 0.161963
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.249903
+2nd xcorr calculation iteration 37: 0.165013
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.254189
+2nd xcorr calculation iteration 38: 0.164930
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.263888
+2nd xcorr calculation iteration 39: 0.159901
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.268304
+2nd xcorr calculation iteration 40: 0.158971
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.268073
+2nd xcorr calculation iteration 41: 0.162989
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.268506
+2nd xcorr calculation iteration 42: 0.165438
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.272437
+2nd xcorr calculation iteration 43: 0.164989
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.272660
+2nd xcorr calculation iteration 44: 0.167769
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.276272
+2nd xcorr calculation iteration 45: 0.167566
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.276825
+2nd xcorr calculation iteration 46: 0.170988
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.277957
+2nd xcorr calculation iteration 47: 0.172621
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.283527
+2nd xcorr calculation iteration 48: 0.171165
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.283725
+2nd xcorr calculation iteration 49: 0.172998
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.284126
+2nd xcorr calculation iteration 50: 0.174439
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.285369
+2nd xcorr calculation iteration 51: 0.174580
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.289022
+2nd xcorr calculation iteration 52: 0.172748
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.283165
+2nd xcorr calculation iteration 53: 0.177697
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.304374
+2nd xcorr calculation iteration 54: 0.156495
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.282605
+2nd xcorr calculation iteration 55: 0.179780
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.284071
+2nd xcorr calculation iteration 56: 0.177112
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.293026
+2nd xcorr calculation iteration 57: 0.169474
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.281573
+2nd xcorr calculation iteration 58: 0.180775
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.287913
+2nd xcorr calculation iteration 59: 0.175018
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.280170
+2nd xcorr calculation iteration 60: 0.182129
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.296433
+2nd xcorr calculation iteration 61: 0.165128
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.299001
+2nd xcorr calculation iteration 62: 0.164363
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.276640
+2nd xcorr calculation iteration 63: 0.186768
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.282186
+2nd xcorr calculation iteration 64: 0.181972
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.289586
+2nd xcorr calculation iteration 65: 0.172573
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.276828
+2nd xcorr calculation iteration 66: 0.183873
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.279878
+2nd xcorr calculation iteration 67: 0.179573
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.276925
+2nd xcorr calculation iteration 68: 0.180487
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.292831
+2nd xcorr calculation iteration 69: 0.159825
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.277458
+2nd xcorr calculation iteration 70: 0.176716
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.275244
+2nd xcorr calculation iteration 71: 0.176326
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.273089
+2nd xcorr calculation iteration 72: 0.176576
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.283525
+2nd xcorr calculation iteration 73: 0.164018
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.275815
+2nd xcorr calculation iteration 74: 0.170143
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.275723
+2nd xcorr calculation iteration 75: 0.167979
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.265450
+2nd xcorr calculation iteration 76: 0.175095
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.262907
+2nd xcorr calculation iteration 77: 0.174787
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.254516
+2nd xcorr calculation iteration 78: 0.179050
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.254573
+2nd xcorr calculation iteration 79: 0.175406
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.249203
+2nd xcorr calculation iteration 80: 0.176582
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.250080
+2nd xcorr calculation iteration 81: 0.172045
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.246552
+2nd xcorr calculation iteration 82: 0.170905
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.252407
+2nd xcorr calculation iteration 83: 0.161011
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 34.022575
+Average xcorr final: 0.085056
+Computing the average xcorr between 1 and 4
+the xcorr_values between 1 and 4 is 0.085056
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.355391
+2nd xcorr calculation iteration 1: 0.136275
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.349029
+2nd xcorr calculation iteration 2: 0.131634
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.359550
+2nd xcorr calculation iteration 3: 0.136651
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.368232
+2nd xcorr calculation iteration 4: 0.143763
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.371331
+2nd xcorr calculation iteration 5: 0.145511
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.374009
+2nd xcorr calculation iteration 6: 0.146246
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.375407
+2nd xcorr calculation iteration 7: 0.146743
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.375190
+2nd xcorr calculation iteration 8: 0.144683
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.385402
+2nd xcorr calculation iteration 9: 0.152108
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.388778
+2nd xcorr calculation iteration 10: 0.153307
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.384976
+2nd xcorr calculation iteration 11: 0.146594
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.401677
+2nd xcorr calculation iteration 12: 0.160010
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.403646
+2nd xcorr calculation iteration 13: 0.158194
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.413897
+2nd xcorr calculation iteration 14: 0.163309
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.414582
+2nd xcorr calculation iteration 15: 0.160141
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.420638
+2nd xcorr calculation iteration 16: 0.162334
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.417377
+2nd xcorr calculation iteration 17: 0.155564
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.432142
+2nd xcorr calculation iteration 18: 0.165693
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.434045
+2nd xcorr calculation iteration 19: 0.164370
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.439176
+2nd xcorr calculation iteration 20: 0.164609
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.444913
+2nd xcorr calculation iteration 21: 0.168008
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.448724
+2nd xcorr calculation iteration 22: 0.168066
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.451595
+2nd xcorr calculation iteration 23: 0.166834
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.458200
+2nd xcorr calculation iteration 24: 0.168872
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.458743
+2nd xcorr calculation iteration 25: 0.165992
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.462590
+2nd xcorr calculation iteration 26: 0.165819
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.466349
+2nd xcorr calculation iteration 27: 0.166836
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.468934
+2nd xcorr calculation iteration 28: 0.166179
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.469706
+2nd xcorr calculation iteration 29: 0.164321
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.472055
+2nd xcorr calculation iteration 30: 0.163511
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.470402
+2nd xcorr calculation iteration 31: 0.159547
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.465925
+2nd xcorr calculation iteration 32: 0.154134
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.474582
+2nd xcorr calculation iteration 33: 0.162044
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.474066
+2nd xcorr calculation iteration 34: 0.162030
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.479748
+2nd xcorr calculation iteration 35: 0.166993
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.478470
+2nd xcorr calculation iteration 36: 0.165601
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.480828
+2nd xcorr calculation iteration 37: 0.166133
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.481707
+2nd xcorr calculation iteration 38: 0.165480
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.476249
+2nd xcorr calculation iteration 39: 0.158858
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.480419
+2nd xcorr calculation iteration 40: 0.161727
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.485536
+2nd xcorr calculation iteration 41: 0.165413
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.486780
+2nd xcorr calculation iteration 42: 0.165024
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.485999
+2nd xcorr calculation iteration 43: 0.162417
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.489356
+2nd xcorr calculation iteration 44: 0.165036
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.488006
+2nd xcorr calculation iteration 45: 0.162709
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.488714
+2nd xcorr calculation iteration 46: 0.162785
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.489057
+2nd xcorr calculation iteration 47: 0.162462
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.484303
+2nd xcorr calculation iteration 48: 0.157633
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.486359
+2nd xcorr calculation iteration 49: 0.158281
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.489665
+2nd xcorr calculation iteration 50: 0.160435
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.485396
+2nd xcorr calculation iteration 51: 0.156648
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.470893
+2nd xcorr calculation iteration 52: 0.167225
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.490985
+2nd xcorr calculation iteration 53: 0.161876
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.473323
+2nd xcorr calculation iteration 54: 0.167518
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.480426
+2nd xcorr calculation iteration 55: 0.160542
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.479196
+2nd xcorr calculation iteration 56: 0.160263
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.482543
+2nd xcorr calculation iteration 57: 0.158711
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.483266
+2nd xcorr calculation iteration 58: 0.157847
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.475684
+2nd xcorr calculation iteration 59: 0.163723
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.465353
+2nd xcorr calculation iteration 60: 0.169473
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.475277
+2nd xcorr calculation iteration 61: 0.164604
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.482974
+2nd xcorr calculation iteration 62: 0.158788
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.479494
+2nd xcorr calculation iteration 63: 0.155687
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.481011
+2nd xcorr calculation iteration 64: 0.157442
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.471370
+2nd xcorr calculation iteration 65: 0.162790
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.470295
+2nd xcorr calculation iteration 66: 0.162689
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.473010
+2nd xcorr calculation iteration 67: 0.158576
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.458583
+2nd xcorr calculation iteration 68: 0.168783
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.476866
+2nd xcorr calculation iteration 69: 0.156160
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.473791
+2nd xcorr calculation iteration 70: 0.155516
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.464779
+2nd xcorr calculation iteration 71: 0.163582
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.470641
+2nd xcorr calculation iteration 72: 0.155957
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.467540
+2nd xcorr calculation iteration 73: 0.156861
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.462680
+2nd xcorr calculation iteration 74: 0.158272
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.460023
+2nd xcorr calculation iteration 75: 0.158039
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.459980
+2nd xcorr calculation iteration 76: 0.157109
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.456907
+2nd xcorr calculation iteration 77: 0.155563
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.456422
+2nd xcorr calculation iteration 78: 0.154714
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.454724
+2nd xcorr calculation iteration 79: 0.153361
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.454427
+2nd xcorr calculation iteration 80: 0.152210
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.440040
+2nd xcorr calculation iteration 81: 0.159297
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.445618
+2nd xcorr calculation iteration 82: 0.153276
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.437495
+2nd xcorr calculation iteration 83: 0.153896
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 50.767391
+Average xcorr final: 0.126918
+Computing the average xcorr between 2 and 3
+the xcorr_values between 2 and 3 is 0.126918
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.163842
+2nd xcorr calculation iteration 1: 0.145840
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.150618
+2nd xcorr calculation iteration 2: 0.137778
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.159630
+2nd xcorr calculation iteration 3: 0.142721
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.167771
+2nd xcorr calculation iteration 4: 0.152067
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.170650
+2nd xcorr calculation iteration 5: 0.154363
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.170279
+2nd xcorr calculation iteration 6: 0.155028
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.171011
+2nd xcorr calculation iteration 7: 0.157166
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.158058
+2nd xcorr calculation iteration 8: 0.148756
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.170430
+2nd xcorr calculation iteration 9: 0.160867
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.162427
+2nd xcorr calculation iteration 10: 0.156227
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.151995
+2nd xcorr calculation iteration 11: 0.148671
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.167805
+2nd xcorr calculation iteration 12: 0.165399
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.166542
+2nd xcorr calculation iteration 13: 0.166135
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.170288
+2nd xcorr calculation iteration 14: 0.168789
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.167642
+2nd xcorr calculation iteration 15: 0.162271
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.165668
+2nd xcorr calculation iteration 16: 0.153409
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.162589
+2nd xcorr calculation iteration 17: 0.144296
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.174766
+2nd xcorr calculation iteration 18: 0.153476
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.173172
+2nd xcorr calculation iteration 19: 0.146125
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.176590
+2nd xcorr calculation iteration 20: 0.145370
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.181731
+2nd xcorr calculation iteration 21: 0.154237
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.179821
+2nd xcorr calculation iteration 22: 0.153419
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.181589
+2nd xcorr calculation iteration 23: 0.159706
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.186689
+2nd xcorr calculation iteration 24: 0.167427
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.189209
+2nd xcorr calculation iteration 25: 0.172919
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.189591
+2nd xcorr calculation iteration 26: 0.175954
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.192291
+2nd xcorr calculation iteration 27: 0.181956
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.193218
+2nd xcorr calculation iteration 28: 0.185455
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.192291
+2nd xcorr calculation iteration 29: 0.185959
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.194503
+2nd xcorr calculation iteration 30: 0.189844
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.192526
+2nd xcorr calculation iteration 31: 0.189659
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.190464
+2nd xcorr calculation iteration 32: 0.189390
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.195574
+2nd xcorr calculation iteration 33: 0.193229
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.201473
+2nd xcorr calculation iteration 34: 0.195154
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.208975
+2nd xcorr calculation iteration 35: 0.196979
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.209929
+2nd xcorr calculation iteration 36: 0.195442
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.213245
+2nd xcorr calculation iteration 37: 0.195947
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.217138
+2nd xcorr calculation iteration 38: 0.195833
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.210310
+2nd xcorr calculation iteration 39: 0.187185
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.219013
+2nd xcorr calculation iteration 40: 0.191177
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.228039
+2nd xcorr calculation iteration 41: 0.194791
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.230842
+2nd xcorr calculation iteration 42: 0.193308
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.230230
+2nd xcorr calculation iteration 43: 0.190257
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.235692
+2nd xcorr calculation iteration 44: 0.191418
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.236465
+2nd xcorr calculation iteration 45: 0.189538
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.239439
+2nd xcorr calculation iteration 46: 0.188714
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.241512
+2nd xcorr calculation iteration 47: 0.188306
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.239879
+2nd xcorr calculation iteration 48: 0.184947
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.243183
+2nd xcorr calculation iteration 49: 0.184225
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.248893
+2nd xcorr calculation iteration 50: 0.185508
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.243334
+2nd xcorr calculation iteration 51: 0.178477
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.239023
+2nd xcorr calculation iteration 52: 0.171713
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.257431
+2nd xcorr calculation iteration 53: 0.184343
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.238723
+2nd xcorr calculation iteration 54: 0.165198
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.251245
+2nd xcorr calculation iteration 55: 0.174180
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.252719
+2nd xcorr calculation iteration 56: 0.173150
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.256954
+2nd xcorr calculation iteration 57: 0.176507
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.259678
+2nd xcorr calculation iteration 58: 0.176505
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.246979
+2nd xcorr calculation iteration 59: 0.164169
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.255582
+2nd xcorr calculation iteration 60: 0.170355
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.245155
+2nd xcorr calculation iteration 61: 0.162959
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.242989
+2nd xcorr calculation iteration 62: 0.159482
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.254955
+2nd xcorr calculation iteration 63: 0.169304
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.258479
+2nd xcorr calculation iteration 64: 0.172361
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.254267
+2nd xcorr calculation iteration 65: 0.167573
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.250895
+2nd xcorr calculation iteration 66: 0.163952
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.252227
+2nd xcorr calculation iteration 67: 0.165034
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.252004
+2nd xcorr calculation iteration 68: 0.164761
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.260537
+2nd xcorr calculation iteration 69: 0.168670
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.233182
+2nd xcorr calculation iteration 70: 0.146928
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.244992
+2nd xcorr calculation iteration 71: 0.157751
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.247294
+2nd xcorr calculation iteration 72: 0.160776
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.232361
+2nd xcorr calculation iteration 73: 0.147055
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.252388
+2nd xcorr calculation iteration 74: 0.165089
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.235752
+2nd xcorr calculation iteration 75: 0.150999
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.244584
+2nd xcorr calculation iteration 76: 0.159328
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.244700
+2nd xcorr calculation iteration 77: 0.159357
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.244571
+2nd xcorr calculation iteration 78: 0.158491
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.243821
+2nd xcorr calculation iteration 79: 0.158838
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.243265
+2nd xcorr calculation iteration 80: 0.158112
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.227741
+2nd xcorr calculation iteration 81: 0.145665
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.235855
+2nd xcorr calculation iteration 82: 0.153199
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.229109
+2nd xcorr calculation iteration 83: 0.146287
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 31.777529
+Average xcorr final: 0.079444
+Computing the average xcorr between 2 and 4
+the xcorr_values between 2 and 4 is 0.079444
+frames: 27833
+Amount of scroll: 137
+Comparing from frame 137 to 16137
+1st xcorr calculation iteration 1: 0.281499
+2nd xcorr calculation iteration 1: 0.079819
+Comparing from frame 274 to 16274
+1st xcorr calculation iteration 2: 0.277796
+2nd xcorr calculation iteration 2: 0.081168
+Comparing from frame 411 to 16411
+1st xcorr calculation iteration 3: 0.274306
+2nd xcorr calculation iteration 3: 0.083883
+Comparing from frame 548 to 16548
+1st xcorr calculation iteration 4: 0.278498
+2nd xcorr calculation iteration 4: 0.082211
+Comparing from frame 685 to 16685
+1st xcorr calculation iteration 5: 0.279320
+2nd xcorr calculation iteration 5: 0.083094
+Comparing from frame 822 to 16822
+1st xcorr calculation iteration 6: 0.274153
+2nd xcorr calculation iteration 6: 0.084330
+Comparing from frame 959 to 16959
+1st xcorr calculation iteration 7: 0.276827
+2nd xcorr calculation iteration 7: 0.084948
+Comparing from frame 1096 to 17096
+1st xcorr calculation iteration 8: 0.279940
+2nd xcorr calculation iteration 8: 0.081300
+Comparing from frame 1233 to 17233
+1st xcorr calculation iteration 9: 0.280762
+2nd xcorr calculation iteration 9: 0.081953
+Comparing from frame 1370 to 17370
+1st xcorr calculation iteration 10: 0.279080
+2nd xcorr calculation iteration 10: 0.082716
+Comparing from frame 1507 to 17507
+1st xcorr calculation iteration 11: 0.279085
+2nd xcorr calculation iteration 11: 0.082240
+Comparing from frame 1644 to 17644
+1st xcorr calculation iteration 12: 0.282764
+2nd xcorr calculation iteration 12: 0.083047
+Comparing from frame 1781 to 17781
+1st xcorr calculation iteration 13: 0.282095
+2nd xcorr calculation iteration 13: 0.082614
+Comparing from frame 1918 to 17918
+1st xcorr calculation iteration 14: 0.285548
+2nd xcorr calculation iteration 14: 0.083388
+Comparing from frame 2055 to 18055
+1st xcorr calculation iteration 15: 0.285308
+2nd xcorr calculation iteration 15: 0.082423
+Comparing from frame 2192 to 18192
+1st xcorr calculation iteration 16: 0.277888
+2nd xcorr calculation iteration 16: 0.091522
+Comparing from frame 2329 to 18329
+1st xcorr calculation iteration 17: 0.277036
+2nd xcorr calculation iteration 17: 0.095493
+Comparing from frame 2466 to 18466
+1st xcorr calculation iteration 18: 0.282685
+2nd xcorr calculation iteration 18: 0.092263
+Comparing from frame 2603 to 18603
+1st xcorr calculation iteration 19: 0.279062
+2nd xcorr calculation iteration 19: 0.099524
+Comparing from frame 2740 to 18740
+1st xcorr calculation iteration 20: 0.280968
+2nd xcorr calculation iteration 20: 0.100593
+Comparing from frame 2877 to 18877
+1st xcorr calculation iteration 21: 0.281775
+2nd xcorr calculation iteration 21: 0.101846
+Comparing from frame 3014 to 19014
+1st xcorr calculation iteration 22: 0.280732
+2nd xcorr calculation iteration 22: 0.106432
+Comparing from frame 3151 to 19151
+1st xcorr calculation iteration 23: 0.280692
+2nd xcorr calculation iteration 23: 0.109039
+Comparing from frame 3288 to 19288
+1st xcorr calculation iteration 24: 0.282037
+2nd xcorr calculation iteration 24: 0.110069
+Comparing from frame 3425 to 19425
+1st xcorr calculation iteration 25: 0.282078
+2nd xcorr calculation iteration 25: 0.112493
+Comparing from frame 3562 to 19562
+1st xcorr calculation iteration 26: 0.282011
+2nd xcorr calculation iteration 26: 0.114578
+Comparing from frame 3699 to 19699
+1st xcorr calculation iteration 27: 0.282354
+2nd xcorr calculation iteration 27: 0.117413
+Comparing from frame 3836 to 19836
+1st xcorr calculation iteration 28: 0.282107
+2nd xcorr calculation iteration 28: 0.120690
+Comparing from frame 3973 to 19973
+1st xcorr calculation iteration 29: 0.280455
+2nd xcorr calculation iteration 29: 0.124232
+Comparing from frame 4110 to 20110
+1st xcorr calculation iteration 30: 0.280221
+2nd xcorr calculation iteration 30: 0.126237
+Comparing from frame 4247 to 20247
+1st xcorr calculation iteration 31: 0.278799
+2nd xcorr calculation iteration 31: 0.129951
+Comparing from frame 4384 to 20384
+1st xcorr calculation iteration 32: 0.274825
+2nd xcorr calculation iteration 32: 0.135554
+Comparing from frame 4521 to 20521
+1st xcorr calculation iteration 33: 0.276321
+2nd xcorr calculation iteration 33: 0.134680
+Comparing from frame 4658 to 20658
+1st xcorr calculation iteration 34: 0.276347
+2nd xcorr calculation iteration 34: 0.136217
+Comparing from frame 4795 to 20795
+1st xcorr calculation iteration 35: 0.278241
+2nd xcorr calculation iteration 35: 0.135456
+Comparing from frame 4932 to 20932
+1st xcorr calculation iteration 36: 0.274967
+2nd xcorr calculation iteration 36: 0.139179
+Comparing from frame 5069 to 21069
+1st xcorr calculation iteration 37: 0.275151
+2nd xcorr calculation iteration 37: 0.139512
+Comparing from frame 5206 to 21206
+1st xcorr calculation iteration 38: 0.273266
+2nd xcorr calculation iteration 38: 0.142785
+Comparing from frame 5343 to 21343
+1st xcorr calculation iteration 39: 0.269262
+2nd xcorr calculation iteration 39: 0.148539
+Comparing from frame 5480 to 21480
+1st xcorr calculation iteration 40: 0.269585
+2nd xcorr calculation iteration 40: 0.149392
+Comparing from frame 5617 to 21617
+1st xcorr calculation iteration 41: 0.271663
+2nd xcorr calculation iteration 41: 0.148776
+Comparing from frame 5754 to 21754
+1st xcorr calculation iteration 42: 0.272525
+2nd xcorr calculation iteration 42: 0.149163
+Comparing from frame 5891 to 21891
+1st xcorr calculation iteration 43: 0.271844
+2nd xcorr calculation iteration 43: 0.151529
+Comparing from frame 6028 to 22028
+1st xcorr calculation iteration 44: 0.271206
+2nd xcorr calculation iteration 44: 0.153321
+Comparing from frame 6165 to 22165
+1st xcorr calculation iteration 45: 0.268949
+2nd xcorr calculation iteration 45: 0.155899
+Comparing from frame 6302 to 22302
+1st xcorr calculation iteration 46: 0.270545
+2nd xcorr calculation iteration 46: 0.155591
+Comparing from frame 6439 to 22439
+1st xcorr calculation iteration 47: 0.270219
+2nd xcorr calculation iteration 47: 0.157339
+Comparing from frame 6576 to 22576
+1st xcorr calculation iteration 48: 0.265892
+2nd xcorr calculation iteration 48: 0.163087
+Comparing from frame 6713 to 22713
+1st xcorr calculation iteration 49: 0.267868
+2nd xcorr calculation iteration 49: 0.162534
+Comparing from frame 6850 to 22850
+1st xcorr calculation iteration 50: 0.266977
+2nd xcorr calculation iteration 50: 0.164897
+Comparing from frame 6987 to 22987
+1st xcorr calculation iteration 51: 0.257688
+2nd xcorr calculation iteration 51: 0.175400
+Comparing from frame 7124 to 23124
+1st xcorr calculation iteration 52: 0.265417
+2nd xcorr calculation iteration 52: 0.168605
+Comparing from frame 7261 to 23261
+1st xcorr calculation iteration 53: 0.269635
+2nd xcorr calculation iteration 53: 0.165454
+Comparing from frame 7398 to 23398
+1st xcorr calculation iteration 54: 0.265908
+2nd xcorr calculation iteration 54: 0.169926
+Comparing from frame 7535 to 23535
+1st xcorr calculation iteration 55: 0.267655
+2nd xcorr calculation iteration 55: 0.168425
+Comparing from frame 7672 to 23672
+1st xcorr calculation iteration 56: 0.269196
+2nd xcorr calculation iteration 56: 0.167794
+Comparing from frame 7809 to 23809
+1st xcorr calculation iteration 57: 0.267477
+2nd xcorr calculation iteration 57: 0.170077
+Comparing from frame 7946 to 23946
+1st xcorr calculation iteration 58: 0.265666
+2nd xcorr calculation iteration 58: 0.171881
+Comparing from frame 8083 to 24083
+1st xcorr calculation iteration 59: 0.253220
+2nd xcorr calculation iteration 59: 0.184214
+Comparing from frame 8220 to 24220
+1st xcorr calculation iteration 60: 0.255519
+2nd xcorr calculation iteration 60: 0.182195
+Comparing from frame 8357 to 24357
+1st xcorr calculation iteration 61: 0.252325
+2nd xcorr calculation iteration 61: 0.184124
+Comparing from frame 8494 to 24494
+1st xcorr calculation iteration 62: 0.242305
+2nd xcorr calculation iteration 62: 0.193064
+Comparing from frame 8631 to 24631
+1st xcorr calculation iteration 63: 0.258959
+2nd xcorr calculation iteration 63: 0.175210
+Comparing from frame 8768 to 24768
+1st xcorr calculation iteration 64: 0.258475
+2nd xcorr calculation iteration 64: 0.175132
+Comparing from frame 8905 to 24905
+1st xcorr calculation iteration 65: 0.256952
+2nd xcorr calculation iteration 65: 0.176108
+Comparing from frame 9042 to 25042
+1st xcorr calculation iteration 66: 0.258622
+2nd xcorr calculation iteration 66: 0.173329
+Comparing from frame 9179 to 25179
+1st xcorr calculation iteration 67: 0.256868
+2nd xcorr calculation iteration 67: 0.173752
+Comparing from frame 9316 to 25316
+1st xcorr calculation iteration 68: 0.248094
+2nd xcorr calculation iteration 68: 0.181972
+Comparing from frame 9453 to 25453
+1st xcorr calculation iteration 69: 0.257676
+2nd xcorr calculation iteration 69: 0.170728
+Comparing from frame 9590 to 25590
+1st xcorr calculation iteration 70: 0.230475
+2nd xcorr calculation iteration 70: 0.196106
+Comparing from frame 9727 to 25727
+1st xcorr calculation iteration 71: 0.246100
+2nd xcorr calculation iteration 71: 0.177378
+Comparing from frame 9864 to 25864
+1st xcorr calculation iteration 72: 0.242444
+2nd xcorr calculation iteration 72: 0.180860
+Comparing from frame 10001 to 26001
+1st xcorr calculation iteration 73: 0.231999
+2nd xcorr calculation iteration 73: 0.189893
+Comparing from frame 10138 to 26138
+1st xcorr calculation iteration 74: 0.244846
+2nd xcorr calculation iteration 74: 0.175099
+Comparing from frame 10275 to 26275
+1st xcorr calculation iteration 75: 0.238450
+2nd xcorr calculation iteration 75: 0.179296
+Comparing from frame 10412 to 26412
+1st xcorr calculation iteration 76: 0.242983
+2nd xcorr calculation iteration 76: 0.172175
+Comparing from frame 10549 to 26549
+1st xcorr calculation iteration 77: 0.242784
+2nd xcorr calculation iteration 77: 0.170719
+Comparing from frame 10686 to 26686
+1st xcorr calculation iteration 78: 0.243077
+2nd xcorr calculation iteration 78: 0.167481
+Comparing from frame 10823 to 26823
+1st xcorr calculation iteration 79: 0.239381
+2nd xcorr calculation iteration 79: 0.168406
+Comparing from frame 10960 to 26960
+1st xcorr calculation iteration 80: 0.239522
+2nd xcorr calculation iteration 80: 0.166512
+Comparing from frame 11097 to 27097
+1st xcorr calculation iteration 81: 0.235446
+2nd xcorr calculation iteration 81: 0.167605
+Comparing from frame 11234 to 27234
+1st xcorr calculation iteration 82: 0.230446
+2nd xcorr calculation iteration 82: 0.170350
+Comparing from frame 11371 to 27371
+1st xcorr calculation iteration 83: 0.225684
+2nd xcorr calculation iteration 83: 0.172542
+amount_computed_pieces: 200
+numNbest: 2
+average_xcorr before divided: 33.711594
+Average xcorr final: 0.084279
+Computing the average xcorr between 3 and 4
+the xcorr_values between 3 and 4 is 0.084279
+Average xcorr for channel 0: 0.093100
+Average xcorr for channel 1: 0.090343
+Average xcorr for channel 2: 0.090101
+Average xcorr for channel 3: 0.085868
+Average xcorr for channel 4: 0.064248
+Reference channel set to channel 0
+Selected channel 0 as the reference channel
+Computing the scalling factor for the output signal
+Calculating the maximum values of the signal, to do a signal adjustment
+Set the total number of segments from 10 to 1 for computing scalling factor, with segment duration 27833
+Processing channel 0
+signal_scroll: 27833
+amount_frames_read: 27833
+segment_duration: 27833
+The Median maximum energy for channel 0 is 0.413330
+Set the total number of segments from 10 to 1 for computing scalling factor, with segment duration 27833
+Processing channel 1
+signal_scroll: 27833
+amount_frames_read: 27833
+segment_duration: 27833
+The Median maximum energy for channel 1 is 0.312195
+Set the total number of segments from 10 to 1 for computing scalling factor, with segment duration 27833
+Processing channel 2
+signal_scroll: 27833
+amount_frames_read: 27833
+segment_duration: 27833
+The Median maximum energy for channel 2 is 0.306732
+Set the total number of segments from 10 to 1 for computing scalling factor, with segment duration 27833
+Processing channel 3
+signal_scroll: 27833
+amount_frames_read: 27833
+segment_duration: 27833
+The Median maximum energy for channel 3 is 0.299469
+Set the total number of segments from 10 to 1 for computing scalling factor, with segment duration 27833
+Processing channel 4
+signal_scroll: 27833
+amount_frames_read: 27833
+segment_duration: 27833
+The Median maximum energy for channel 4 is 0.582855
+Weighting calculated to adjust the signal: 0.783461
+Finished computation of the scalling factor
+Setting initial Channel Weights...finishedFrames: 27833
+Rate 250, window 500 frames 27833 samplerate 16000
+ 0 (1.000)	 -6 (0.113)	 5 (0.138)	 3 (0.085)	 11 (0.136)	
+Processing 0.250 s. (25.000 percent) 0 (1.000)	 1 (0.416)	 -4 (0.361)	 -4 (0.332)	 -8 (0.146)	
+Processing 0.500 s. (50.000 percent) 0 (1.000)	 1 (0.527)	 -4 (0.382)	 -4 (0.375)	 16 (0.176)	
+Processing 0.750 s. (75.000 percent) 0 (1.000)	 1 (0.527)	 -4 (0.411)	 -4 (0.406)	 16 (0.236)	
+
+Finished computing delays
+Computing the optimum delays
+Threshold is 0.117919 (min: 0.117919 max 0.394998)
+Thresholding noisy frames lower than 0.117919
+  Aplying a noise thresholding
+Channel 0 frame 0: 0 0 0 0
+Channel 0 frame 1: 0 0 0 0
+Channel 0 frame 2: 0 0 0 0
+Channel 0 frame 3: 0 0 0 0
+Channel 1 frame 0: 0 480 480 480
+Channel 1 frame 1: 1 -9 18 8
+Channel 1 frame 2: 1 -9 18 8
+Channel 1 frame 3: 1 -9 13 18
+Channel 2 frame 0: 5 -13 -2 12
+Channel 2 frame 1: -4 -12 8 2
+Channel 2 frame 2: -4 8 -11 29
+Channel 2 frame 3: -4 8 -9 -15
+Channel 3 frame 0: 0 480 480 480
+Channel 3 frame 1: -4 2 -14 14
+Channel 3 frame 2: -4 2 -9 -14
+Channel 3 frame 3: -4 2 20 12
+Channel 4 frame 0: 11 -9 -17 0
+Channel 4 frame 1: -8 16 -1 7
+Channel 4 frame 2: 16 9 -2 -11
+Channel 4 frame 3: 16 -5 28 33
+  Finished applying a noise filter
+Deconding Each channel Independently to find the 2-best delays from each N-best inputComputing the 1st best delay
+First best start
+
+Trans_weight selected to 25.000000
+Starting Viterbi with 5 channels and 4 N-best values per channel
+Computing Viterbi for channel 0
+   Segmentation Over with Viterbi score = -22.577250
+Computing Viterbi for channel 1
+   Segmentation Over with Viterbi score = -1.640073
+Computing Viterbi for channel 2
+   Segmentation Over with Viterbi score = -5.326447
+Computing Viterbi for channel 3
+   Segmentation Over with Viterbi score = -1.811438
+Computing Viterbi for channel 4
+   Segmentation Over with Viterbi score = -7.024652
+First best finish
+Computing the 2nd best delay
+second best start
+
+Trans_weight selected to 25.000000
+Starting Viterbi with 5 channels and 4 N-best values per channel
+Computing Viterbi for channel 0
+   Segmentation Over with Viterbi score = -4022.577250
+Computing Viterbi for channel 1
+   Segmentation Over with Viterbi score = -1002.100434
+Computing Viterbi for channel 2
+   Segmentation Over with Viterbi score = -4.355128
+Computing Viterbi for channel 3
+   Segmentation Over with Viterbi score = -1002.005963
+Computing Viterbi for channel 4
+   Segmentation Over with Viterbi score = -10.870461
+second best finish
+Done computing the 2nd best delay
+Finished decoding both best paths, writting out results
+
+Decoding all 2-best input delays to find the optimum path in coherence with all channels
+Total number of possible delays: 32
+Starting the viterbi
+   Segmentation Over with Viterbi score = -11.747568
+Finished computing optimum delays
+Finished computing the optimum delays
+Printing delays to file
+Summing up all the channels
+Memory allocation for all data
+Finished allocating memory
+0 frame 0, channel 24000 maximum: 8000, read: 0
+final delay: 0, data_start_out: 0
+0 frame 1, channel 24000 maximum: 8000, read: 0
+final delay: 0, data_start_out: 0
+0 frame 2, channel 24000 maximum: 7987, read: 0
+final delay: -13, data_start_out: 13
+0 frame 3, channel 24000 maximum: 8000, read: 0
+final delay: 0, data_start_out: 0
+0 frame 4, channel 24000 maximum: 8000, read: 0
+final delay: 11, data_start_out: 0
+local_xcorr[0][1]: 0.025606
+local_xcorr[0][2]: 0.025045
+local_xcorr[0][3]: 0.020987
+local_xcorr[0][4]: 0.008268
+local_xcorr[1][2]: 0.018017
+local_xcorr[1][3]: 0.024076
+local_xcorr[1][4]: 0.006461
+local_xcorr[2][3]: 0.015498
+local_xcorr[2][4]: 0.004600
+local_xcorr[3][4]: 0.000000
+
+channel weight[0]: 0.203992
+channel weight[1]: 0.200536
+channel weight[2]: 0.201166
+channel weight[3]: 0.200536
+channel weight[4]: 0.193770
+
+1 frame 0, channel 24000 maximum: 8000, read: 0
+final delay: 0, data_start_out: 0
+1 frame 1, channel 24000 maximum: 8000, read: 0
+final delay: 1, data_start_out: 0
+1 frame 2, channel 24000 maximum: 8000, read: 0
+final delay: 8, data_start_out: 0
+1 frame 3, channel 24000 maximum: 8000, read: 0
+final delay: -4, data_start_out: 0
+1 frame 4, channel 24000 maximum: 8000, read: 0
+final delay: 7, data_start_out: 0
+local_xcorr[0][1]: 0.020044
+local_xcorr[0][2]: 0.011567
+local_xcorr[0][3]: 0.017956
+local_xcorr[0][4]: 0.006670
+local_xcorr[1][2]: 0.011850
+local_xcorr[1][3]: 0.021970
+local_xcorr[1][4]: 0.003301
+local_xcorr[2][3]: 0.008394
+local_xcorr[2][4]: 0.012373
+local_xcorr[3][4]: 0.000000
+
+channel weight[0]: 0.206117
+channel weight[1]: 0.203038
+channel weight[2]: 0.200786
+channel weight[3]: 0.201095
+channel weight[4]: 0.188964
+
+2 frame 0, channel 24000 maximum: 8000, read: 0
+final delay: 0, data_start_out: 0
+2 frame 1, channel 24000 maximum: 8000, read: 0
+final delay: 1, data_start_out: 0
+2 frame 2, channel 24000 maximum: 8000, read: 0
+final delay: 8, data_start_out: 0
+2 frame 3, channel 24000 maximum: 8000, read: 0
+final delay: -4, data_start_out: 0
+2 frame 4, channel 24000 maximum: 8000, read: 0
+final delay: 9, data_start_out: 0
+local_xcorr[0][1]: 0.022511
+local_xcorr[0][2]: 0.010705
+local_xcorr[0][3]: 0.023305
+local_xcorr[0][4]: 0.008476
+local_xcorr[1][2]: 0.013280
+local_xcorr[1][3]: 0.026771
+local_xcorr[1][4]: 0.009926
+local_xcorr[2][3]: 0.010941
+local_xcorr[2][4]: 0.018119
+local_xcorr[3][4]: 0.006833
+
+channel weight[0]: 0.206582
+channel weight[1]: 0.204902
+channel weight[2]: 0.199534
+channel weight[3]: 0.202287
+channel weight[4]: 0.186695
+
+3 frame 0, channel 24000 maximum: 15833, read: 0
+final delay: 0, data_start_out: 0
+3 frame 1, channel 24000 maximum: 15832, read: 0
+final delay: 1, data_start_out: 0
+3 frame 2, channel 24000 maximum: 15825, read: 0
+final delay: 8, data_start_out: 0
+3 frame 3, channel 24000 maximum: 15837, read: 0
+final delay: -4, data_start_out: 0
+3 frame 4, channel 24000 maximum: 15817, read: 0
+final delay: 16, data_start_out: 0
+local_xcorr[0][1]: 0.012563
+local_xcorr[0][2]: 0.008766
+local_xcorr[0][3]: 0.013783
+local_xcorr[0][4]: 0.004987
+local_xcorr[1][2]: 0.009184
+local_xcorr[1][3]: 0.015122
+local_xcorr[1][4]: 0.006627
+local_xcorr[2][3]: 0.006918
+local_xcorr[2][4]: 0.008614
+local_xcorr[3][4]: 0.003810
+
+channel weight[0]: 0.207348
+channel weight[1]: 0.206693
+channel weight[2]: 0.198818
+channel weight[3]: 0.203138
+channel weight[4]: 0.184003
+
+finished writting files
+Sinc-ed all files' outputs for the 0 best
+Finished summing up all the channels
+Closing all used channels
+Finished closing all the channels
