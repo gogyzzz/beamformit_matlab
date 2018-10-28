@@ -27,10 +27,7 @@ See beamformit.m
 
 ## Result
 
-|   | my_out_x - orig_out_x | error |
-|---|---|---|
-| F01_052C010C_BUS | ![](sample7_diff.png)  | ![](sample7_diff_zoomin.png)  |
-| F01_050C0103_STR | ![](sample8_diff.png)  | ![](sample8_diff_zoomin.png)  |
+![](sample11.png)
 
 ```sh
 ## original version
