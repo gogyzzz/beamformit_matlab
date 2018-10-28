@@ -24,7 +24,7 @@ function beamformit(infilenames_cell, outfilename)
     nbest = 2;
     nmask = 5;
 
-    % not the same of original beamformit. I don't know how.
+    % not the same of original bfit_1025_endpart. I don't know how.
     ref_mic = calcuate_avg_ccorr(x, nsample, nmic, npiece, win, nwin, nfft, nbest, nmask);
 
     %% calculating scaling factor
@@ -53,29 +53,30 @@ function beamformit(infilenames_cell, outfilename)
 %     disp(gcc_nbest);
     
     %% find noise threshold
-    threshold = get_noise_threshold(gcc_nbest, npair, nframe);
+    threshold = get_noise_threshold(gcc_nbest, nmic, ref_mic, nframe);
 %     disp(threshold);
     
     %% noise filtering
-    [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold);
+    [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, ref_mic, nframe, threshold);
 
     
     %% single channel viterbi
-    % not the same of original beamformit. 
+    % not the same of original bfit_1025_endpart. 
     [emission1, transition1] = prep_ch_indiv_viterbi(gcc_nbest, tdoa_nbest, npair, nframe, nbest);
 
-    bestpath1 = decode_ch_indiv_viterbi(emission1, transition1, npair, nframe, nbest);
+    bestpath1 = ones(npair, nframe);
+    
+    bestpath1 = decode_ch_indiv_viterbi(bestpath1, emission1, transition1, npair, nframe, nbest);
 
-    best2path = decode_ch_indiv_viterbi_best2(bestpath1, emission1, transition1, npair, nframe, nbest);
+    best2path = decode_ch_indiv_viterbi_best2(bestpath1, gcc_nbest, transition1, npair, nframe, nbest);
 
     %% multi channel viterbi
-    % not the same of original beamformit. 
+    % not the same of original bfit_1025_endpart. 
     nbest2 = 2;
     nstate = nbest2 ^ npair;
     g = get_states(nstate, nmic, npair, nbest2);
 
-    [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, transition1, g, npair, nframe, nstate);
-
+    [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, tdoa_nbest, g, npair, nbest, nframe, nstate);
     besttdoa = decode_global_viterbi(best2path, emission2, transition2, tdoa_nbest, g, npair, nframe, nstate);
 
     %% compute local xcorr
@@ -96,7 +97,8 @@ end
 
 function [x, sr, nmic, npair, nsample] = get_x(infilenames_cell)
     nmic = size(infilenames_cell,2);    
-    npair = nmic - 1;
+    %npair = nmic - 1;
+    npair = nmic;
     [x_ch1,sr] = audioread(infilenames_cell{1});
     nsample = size(x_ch1,1);
     x = zeros(nmic, nsample);
@@ -109,20 +111,23 @@ end
 
 function [max_val, idx] = maxk(list, k, nmask)
 
+    candi_list = zeros(length(list(:)),1);
+
     for i = 2:(length(list(:))-1)
         if list(i-1) < list(i) && list(i+1) < list(i)
-            list(i-1) = -9999;
-            list(i+1) = -9999;
+	    candi_list(i) = list(i);
+            %list(i-1) = -9999;
+            %list(i+1) = -9999;
         end
     end
 
     max_val = zeros(k, 1);
     idx = zeros(k,1);
     for i = 1:k
-        [max_val(i), idx(i)] = max(list);
-        st = max(idx-nmask+1, 1);
-        ed = min(length(list(:)), idx+nmask-1);
-        list(st:ed) = 0;
+        [max_val(i), idx(i)] = max(candi_list);
+        st = max(idx(i)-nmask+1, 1);
+        ed = min(length(candi_list(:)), idx(i)+nmask-1);
+        candi_list(st:ed) = 0;
     end
 end
 
@@ -192,23 +197,27 @@ function overall_weight = calculate_scaling_factor(x, sr, nsample, nmic, nsegmen
         end
     else
         if nsample < 100*sr % 100 seconds
-            nsegment = ceil(size(x,2) / 16000);
+            nsegment = floor(size(x,2) / 160000);
         end
         scroll = floor(size(x,2) / nsegment);
         max_val_candidate = zeros(nmic, nsegment);
 
         for s = 0:(nsegment-1)
             st = s * scroll + 1;
-            ed = st + scroll - 1;
+            ed = st + 160000 - 1;
             for m = 1:nmic
-                max_val_candidate(m,s+1) = abs(max(x(m,st:ed)));
+                max_val_candidate(m,s+1) = max(abs(x(m,st:ed)));
             end
         end
 
         for m = 1:nmic
 
             sorted = sort(max_val_candidate(m,:), 'ascend');
-            max_val(m) = sorted(floor(end/2) + 1);
+	    if length(sorted(:)) > 2
+		max_val(m) = sorted(floor(end/2) + 1);
+	    else
+		max_val(m) = sorted;
+	    end
         end
     end
 
@@ -226,9 +235,9 @@ function pair2mic = get_pair2mic(nmic, npair)
     for m = 1:nmic
         p = 1; % pair idx
         for i = 1:nmic
-            if i == m
-                continue;
-            end
+%             if i == m
+%                 continue;
+%             end
             pair2mic(m,p) = i;
             p = p + 1;
         end
@@ -271,20 +280,20 @@ function [gcc_nbest, tdoa_nbest] = compute_tdoa(x, npair, ref_mic, pair2mic, nfr
     end
 end
 
-function threshold = get_noise_threshold(gcc_nbest, npair, nframe)
+function threshold = get_noise_threshold(gcc_nbest, nmic, ref_mic, nframe)
     % Threshold is 0.140125 (min: 0.132648 max 0.563892)
     % Thresholding noisy frames lower than 0.140125
     th_idx = floor((0.1 * nframe)) + 1;
 
-    sorted = sort(sum(gcc_nbest(:,:,1),1), 'ascend');
-
-    threshold = sorted(th_idx)/npair;
+    sorted = sort(sum(gcc_nbest(:,:,1),1) - sum(gcc_nbest(ref_mic,:,1),1), 'ascend');
+    
+    threshold = sorted(th_idx)/(nmic-1);
     %disp(sorted);
     % disp(th_idx);
     % disp(threshold);
 end
 
-function [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, nframe, threshold)
+function [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdoa_nbest, npair, ref_mic, nframe, threshold)
 
     noise_filter = zeros(npair, nframe);
 
@@ -302,6 +311,11 @@ function [gcc_nbest, tdoa_nbest, noise_filter] = get_noise_filter(gcc_nbest, tdo
                     tdoa_nbest(p,t,:) = tdoa_nbest(p,t-1,:);
                 end
             end
+            if p == ref_mic
+                gcc_nbest(p,t,:) = 0;
+                gcc_nbest(p,t,1) = 1;
+                tdoa_nbest(p,t,:) = 0;
+            end   
         end
     end
 end
@@ -315,10 +329,10 @@ function [emission1, transition1] = prep_ch_indiv_viterbi(gcc_nbest, tdoa_nbest,
     for p = 1:npair
         for t = 1:nframe
             for n = 1:nbest 
-                if gcc_nbest(p,t,n) == 0
-                    emission1(p,t,n) = -1000;
+                if gcc_nbest(p,t,n) > 0
+                    emission1(p,t,n) = log10(gcc_nbest(p,t,n) / sum(gcc_nbest(p,t,:)));
                 else
-                    emission1(p,t,n) = log10(gcc_nbest(p,t,n));
+                    emission1(p,t,n) = -1000;    
                 end
             end
         end
@@ -334,8 +348,6 @@ function [emission1, transition1] = prep_ch_indiv_viterbi(gcc_nbest, tdoa_nbest,
         end
     end
 
-    maxdiff1 = max(diff1(:));
-
     for p = 1:npair
         for t = 2:nframe
             for n = 1:nbest
@@ -347,6 +359,7 @@ function [emission1, transition1] = prep_ch_indiv_viterbi(gcc_nbest, tdoa_nbest,
     %                 disp(log10(481/482));
     %                 disp(1 + maxdiff1(p,t,n) - diff1(p,t,n,nprev));
     %                 disp((2+maxdiff1(p,t,n)));
+                    maxdiff1 = max(diff1(p,t,:));
                     nume = 1 + maxdiff1 - diff1(p,t,n,nprev);
                     deno = (2+maxdiff1);
                     transition1(p,t,n,nprev) = log10(nume / deno);
@@ -356,59 +369,81 @@ function [emission1, transition1] = prep_ch_indiv_viterbi(gcc_nbest, tdoa_nbest,
     end
 end
 
-function bestpath1 = decode_ch_indiv_viterbi(emission1, transition1, npair, nframe, nbest)
+function bestpath1 = decode_ch_indiv_viterbi(bestpath1, emission1, transition1, npair, nframe, nbest)
 
-    score1 = zeros(npair, nframe, nbest, nbest); % tmp variable
-    score1_table = zeros(npair, nframe, nbest);
-    back1_table = zeros(npair, nframe, nbest);
-    bestpath1 = zeros(npair, nframe); % state idx stored.
-
+    dC = ones(npair, nframe, nbest) * -1000;
+    tC = ones(npair, nframe, nbest);
+    R = ones(npair, nframe);
+    F = ones(npair, nframe);
+    
+    forwardTrans = zeros(npair, nframe, nbest);
+    selfLoopTrans = zeros(npair, nframe, nbest);
+    
     for p = 1:npair
-
         for n = 1:nbest
-            score1(p,1,n,:) = emission1(p,1,n); % broadcasting
-            score1_table(p,1,n) = emission1(p,1,n);
+            dC(p,1,n) = emission1(p,1,n);
         end
     end
 
     for p = 1:npair
         for t = 2:nframe
             for n = 1:nbest
-                for nprev = 1:nbest
-                    score1(p,t,n,nprev) = ...
-                        score1_table(p,t-1,nprev,1) + ...
-                        25*transition1(p,t,n,nprev) + ... 
-                        emission1(p,t,n);    
+                best_n_prev = R(p,t-1);
+
+                forwardTrans(p,t,n) = dC(p,t-1,best_n_prev) + 25 * transition1(p,t,n,best_n_prev);
+                selfLoopTrans(p,t,n) = dC(p,t-1,n) + 25 * transition1(p,t,n,n);
+
+                if selfLoopTrans(p,t,n) >= forwardTrans(p,t,n)
+                    dC(p,t,n) = selfLoopTrans(p,t,n) + emission1(p,t,n);
+                    tC(p,t,n) = tC(p,t-1,n);
+                else
+                    dC(p,t,n) = forwardTrans(p,t,n) + emission1(p,t,n);
+                    tC(p,t,n) = t;
                 end
-                %score1_table(p,t,n) = max(score1(p,t,n,:));
-                [score1_table(p,t,n),back1_table(p,t,n)] = max(score1(p,t,n,:));
             end
+
+            [dummy, R(p,t)] = max(dC(p,t,:));
+            F(p,t) = tC(p,t,R(p,t));
+
+        end
+
+        st = F(p,end);
+        bestpath1(p,st:end) = R(p,end);
+
+        while st > 2
+            ed = st - 1;
+            st = F(p,ed);
+            bestpath1(p,st:ed) = R(p,ed);
         end
     end
-
-    for p = 1:npair
-        [dummy, bestpath1(p,end)] = max(score1_table(p,end,:));
-    end
-
-    for p = 1:npair
-        for back_t = 0:(nframe-2)        
-            t = nframe - back_t;
-            bestpath1(p,t-1) = back1_table(p,t,bestpath1(p,t));
-        end
-    end
+    
 end
 
-function best2path = decode_ch_indiv_viterbi_best2(bestpath1, emission1, transition1, npair, nframe, nbest)
+function best2path = decode_ch_indiv_viterbi_best2(bestpath1, gcc_nbest, transition1, npair, nframe, nbest)
     
     best2path = zeros(npair, nframe, 2);
+    emission1 = zeros(npair, nframe, nbest);
+    
     for p = 1:npair
         for t = 1:nframe
             best1 = bestpath1(p,t);
-            emission1(p,t,best1) = -1000;
+            gcc_nbest(p,t,best1) = 0;
         end
     end
-
-    bestpath2 = decode_ch_indiv_viterbi(emission1, transition1, npair, nframe, nbest);
+    
+    for p = 1:npair
+        for t = 1:nframe
+            for n = 1:nbest 
+                if gcc_nbest(p,t,n) > 0
+                    emission1(p,t,n) = log10(gcc_nbest(p,t,n) / sum(gcc_nbest(p,t,:)));
+                else
+                    emission1(p,t,n) = -1000;    
+                end
+            end
+        end
+    end
+    
+    bestpath2 = decode_ch_indiv_viterbi(bestpath1, emission1, transition1, npair, nframe, nbest);
     
     for p = 1:npair
         for t = 1:nframe
@@ -444,8 +479,9 @@ function g = get_states(nstate, nmic, npair, nbest2)
     end
 end
 
-function [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, transition1, g, npair, nframe, nstate)
+function [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, tdoa_nbest, g, npair, nbest, nframe, nstate)
 
+    diff2 = zeros(npair, nframe, nbest, nbest);
     emission2 = zeros(nframe, nstate);
     transition2 = zeros(nframe, nstate, nstate); % do not using 1st idx
 
@@ -464,14 +500,28 @@ function [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, tr
     end
 
     for t = 2:nframe
+        maxdiff2 = 0;
+        for ibest = 1:nbest
+            for jbest = 1:nbest
+                for m = 1:npair-1 % why?
+                    diff2(m,t,ibest, jbest) = abs(tdoa_nbest(m,t,ibest)-tdoa_nbest(m,t-1,jbest));
+                    if maxdiff2 < diff2(m,t,ibest, jbest)
+                        maxdiff2 = diff2(m,t,ibest, jbest);
+                    end
+                end
+            end
+        end
+   
+        diff2(:,t,:,:) = log10( (1 + maxdiff2 - diff2(:,t,:,:)) / (2 + maxdiff2) );
         for l = 1:nstate
             for lprev = 1:nstate
-                for m = 1:npair
+                for m = 1:npair-1
                     ibest = best2path(m, t, g(l,m));
-                    jbest = best2path(m, t, g(lprev,m));
+                    jbest = best2path(m, t-1, g(lprev,m));
+                    
                     transition2(t,l,lprev)...
                         = transition2(t,l,lprev)...
-                        + transition1(m,t,ibest,jbest);
+                        + diff2(m,t,ibest,jbest);
                 end
             end
         end
@@ -479,44 +529,66 @@ function [emission2, transition2] = prep_global_viterbi(best2path, gcc_nbest, tr
 end
 
 function besttdoa = decode_global_viterbi(best2path, emission2, transition2, tdoa_nbest, g, npair, nframe, nstate)
-    score2 = zeros(nframe, nstate, nstate);
-    score2_table = zeros(nframe, nstate);
-    back2_table = zeros(nframe, nstate);
+    
     besttdoa = zeros(npair, nframe);
-    %bestgcc2 = zeros(npair, nframe);
+    
+    dC = ones(nframe, nstate) * -1000;
+    tC = ones(nframe, nstate);
+
+    R = ones(nframe, 1); % best prev state
+    F = ones(nframe, 1);
+
+    forwardTrans = zeros(nframe, nstate);
+    selfLoopTrans = zeros(nframe, nstate);
+
 
     for l = 1:nstate
-        score2_table(1,l) = emission2(1,l);
+        dC(1,l) = emission2(1,l);
     end
 
     for t = 2:nframe
         for l = 1:nstate
-            for lprev = 1:nstate
-                 score2(t,l,lprev) = ...
-                    score2_table(t-1,lprev) + ...
-                    25*transition2(t,l,lprev) + ... 
-                    1*emission2(t,l);
+            best_l_prev = R(t-1);
 
+            forwardTrans(t,l) = dC(t-1,best_l_prev) + 25 * transition2(t,l,best_l_prev);
+            selfLoopTrans(t,l) = dC(t-1,l) + 25 * transition2(t,l,l);
+
+            if selfLoopTrans(t,l) >= forwardTrans(t,l)
+                dC(t,l) = selfLoopTrans(t,l) + emission2(t,l);
+                tC(t,l) = tC(t-1,l);
+            else
+                dC(t,l) = forwardTrans(t,l) + emission2(t,l);
+                tC(t,l) = t;
             end
-            [score2_table(t,l), back2_table(t,l)] = max(score2(t,l,:));
         end
+
+        [dummy, R(t)] = max(dC(t,:));
+        F(t) = tC(t,R(t));
     end
 
-    bestpath2 = zeros(nframe,1); % state idx stored.
+    bestpath2 = ones(nframe,1); % state idx stored.
+    
+    st = F(end);
+    bestpath2(st:end) = R(end);
 
-    [dummy, bestpath2(end)] = max(score2_table(end,:));
-
-    for back_t = 0:(nframe-2)        
-        t = nframe - back_t;
-        bestpath2(t-1) = back2_table(t,bestpath2(t));
+    while st > 2
+        ed = st - 1;
+        st = F(ed);
+        bestpath2(st:ed) = R(ed);
     end
+
+    besttdoa = zeros(npair, nframe);
 
     for t = 1:nframe
+        if bestpath2(t) == 0
+            fprintf('t: %d\n', bestpath2(t));
+            disp(F);
+            disp(R);
+        end
         for p = 1:npair
             l = bestpath2(t);
             ibest = best2path(p, t, g(l,p));
             besttdoa(p,t) = tdoa_nbest(p,t,ibest);
-            %bestgcc2(p,t) = gcc_nbest(p,t,ibest);
         end
     end
 end
@@ -584,6 +656,7 @@ function out_weight = compute_out_weight(localxcorr, nframe, nmic, noise_filter,
         end
 
         localxcorr(:,t) = localxcorr(:,t) / sum(localxcorr(:,t));
+	localxcorr_sum_nonref = 0;
 
         for m = 1:nmic
             if m == ref_mic
@@ -597,6 +670,20 @@ function out_weight = compute_out_weight(localxcorr, nframe, nmic, noise_filter,
                     out_weight(m,t) = ...
                         (1-alpha) * out_weight(m,max(1,t-1)) ...
                         + alpha * localxcorr(m,t);    
+                end
+            
+                localxcorr_sum_nonref = localxcorr_sum_nonref + localxcorr(m,t);
+            end
+        end
+
+        if sum(localxcorr(:,t)) == 0
+            out_weight(:,t) = 1;
+        end
+
+        for m = 1:nmic
+            if m ~= ref_mic
+                if (localxcorr(m,t) / localxcorr_sum_nonref) < (1 / (10 * (nmic-1)))
+                    out_weight(m,t) = 0;
                 end
             end
         end
@@ -645,44 +732,50 @@ function out_x = channel_sum(x, nsample, nframe, nmic, ref_mic, mic2refpair, nwi
         end
     end
 
-    ref_st = (t) * nshift + 1;
-    ref_ed = min(ref_st + nwin - 1, nsample);
+    while ref_st + 4000 < nsample
+        ref_st = ref_st + 4000;
+        ref_ed = min(ref_st + nwin - 1, nsample);
 
-    for m = 1:nmic
-        if m == ref_mic
-            st = ref_st;
-            ed = ref_ed;
-        else
-            p = mic2refpair(m);
-            st = max(1,ref_st + besttdoa(p,t));
-            ed = min(nsample, ref_ed + besttdoa(p,t));
-        end
-        buf = squeeze(x(m,st:ed));
-        diff = (ref_ed - ref_st) - (ed-st);
-        if diff > 0
-            buf = [buf, zeros(1,diff)];
-        else
-            buf = buf(1:end-diff);
-        end
+        for m = 1:nmic
+	    %fprintf('ref_ed: %d\n', ref_ed);
+            
+            if m == ref_mic
+                st = ref_st;
+                ed = ref_ed;
+            else
+                p = mic2refpair(m);
+                st = max(1,ref_st + besttdoa(p,t));
+                ed = min(nsample, ref_ed + besttdoa(p,t));
+            end
 
-        triwin = triang(nwin)';
-    %     triwin(4001:end) = 1;
+	    if st > ed
+		continue;
+	    end
+            buf = squeeze(x(m,st:ed));
+            diff = (ref_ed - ref_st) - (ed-st);
+            if diff > 0
+                buf = [buf, zeros(1,diff)];
+            else
+                buf = buf(1:end-diff);
+            end
 
-    %     fprintf('diff: %d, ref_ed: %d, ref_st %d\n',diff, ref_ed, ref_st);
-    %     fprintf('ed: %d, st %d\n', ed, st);
-    %     fprintf('buf size: %d\n',size(buf,2));
+            triwin = triang(nwin)';
 
-        out_x(ref_st:ref_ed)...
-                = out_x(ref_st:ref_ed)...   
-                + (buf...
-                * out_weight(m,t)...
-                .* triwin(1:min(nwin,ref_ed-ref_st+1))...
-                * overall_weight);
+	    %fprintf('ref_ed: %d, ref_st: %d\n', ref_ed, ref_st);
+	    %fprintf('ref_ed - ref_st: %d\n', ref_ed - ref_st);
+	    %fprintf('size of buf: %d\n', size(buf,1));
+            out_x(ref_st:ref_ed)...
+                    = out_x(ref_st:ref_ed)...   
+                    + (buf...
+                    * out_weight(m,t)...
+                    .* triwin(1:min(nwin,size(buf, 2)))...
+                    * overall_weight);
 
     % this part helps increasing recognition accuracy.
-    % not in original beamformit.
+    % not in original bfit_1025_endpart.
     %     if ref_ed < nsample
     %         out_x(ref_ed+1:end) = out_x(ref_ed+1:end) + (x(ref_mic,ref_ed+1:end) * out_weight(m,t) * overall_weight);
     %     end
+        end
     end
 end
